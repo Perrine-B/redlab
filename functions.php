@@ -47,7 +47,7 @@ function wpm_remove_default_widgets()
   unregister_widget('WP_Widget_Media_Audio'); // Le widget Audio
   unregister_widget('WP_Widget_Media_Video'); // Le widget Vidéo
   unregister_widget('WP_Widget_Custom_HTML'); // Le widget HTML personnalisé
-  unregister_widget('WP_Widget_Categories'); // Le widget catégories
+  // unregister_widget('WP_Widget_Categories'); // Le widget catégories
   unregister_widget('WP_Widget_Recent_Posts'); // Le widget articles récents
   unregister_widget('WP_Widget_RSS'); // Le widget RSS
   unregister_widget('WP_Widget_Meta'); // le widget Méta
