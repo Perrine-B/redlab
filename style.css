@@ -1,0 +1,171 @@
+/*
+Theme Name: skyblog
+Author: Perrine B
+Description: Petits détails sur les fonctionnalités. Ce thème est conçu pour la création de blogs. La page pour recenser toutes les publications n'est pas présente par défaut mais vous pouvez facilement la créer en éditant une nouvelle page à partir du template de page blog prévu à cet effet. Cette page donnera également accès à la sidebar latérale principale. La home est divisée en trois sections. La première est un header personnalisable. La seconde reprendra le dernier post publié SAUF si l'un des posts publié est marqué comme sticky. Dans ce cas, c'est le sticky post le plus récent qui sera affiché. Enfin la troisième section se déclenchera une fois trois articles publiés pour afficher les derniers articles postés. Les sidebars présentes dans le footer ont été conçues pour ne recevoir qu'un seul widget. La searchbar et les commentaires et la 404 sont opérationnels. Bonne utilisation
+Version: 1.0
+
+/**
+* Basic settings
+*/
+
+main {
+  margin-top: 5em;
+}
+
+body,
+h3,
+p,
+a {
+  font-family: "Roboto", sans-serif;
+}
+
+list-style {
+  display: "none";
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Amatic SC", cursive;
+}
+
+h2 {
+  color: goldenrod;
+}
+
+.hero {
+  margin-top: -23px;
+}
+
+.navbar {
+  box-shadow: 0px -10px 23px 1px gray;
+}
+
+/**
+* Home 
+*/
+
+#site-title {
+  font-size: 4em;
+  color: black;
+}
+
+#site-subtitle {
+  font-size: 2em;
+  font-family: "Oswald, sans-serif";
+  color: black;
+  margin-left: 1em;
+}
+
+.homeicon {
+  background-image: url("./assets/img/logo.png");
+  background-repeat: no-repeat;
+  background-position: left;
+  padding-left: 5px;
+}
+
+.section-title {
+  font-size: 2.5em;
+  color: darkgoldenrod;
+  margin-bottom: 1em;
+}
+
+/**
+* Menu 
+*/
+
+#menu-social {
+  display: flex;
+}
+
+#main-menu > ul {
+  display: flex;
+  flex-direction: row;
+}
+
+#main-menu > ul > li {
+  margin-right: 1em;
+}
+
+.menu-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 0.5em;
+}
+
+.menu-item:hover > a {
+  color: black;
+  text-decoration: none;
+}
+
+.is-active > div {
+  display: flex;
+  justify-content: center;
+  padding: 1em;
+}
+
+.is-active > div > div > ul {
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-footer {
+  height: 13em;
+}
+
+.menu-footer > li {
+  background-color: black;
+}
+
+li > a {
+  color: grey;
+}
+
+li > a:hover {
+  color: black;
+  text-decoration: none;
+}
+
+/**
+* Widget
+*/
+
+.textwidget > p {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+}
+
+.widgettitle {
+  color: goldenrod;
+  font-size: 2em;
+  margin-bottom: 0.5em;
+}
+
+.box > img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.box > ul {
+  display: flex;
+  flex-direction: column;
+  padding: 1em;
+}
+
+/**
+* Comments
+*/
+
+#comment-name > a {
+  color: black;
+}
+
+/**
+* 404
+*/
+
+button > a {
+  color: grey;
+}
