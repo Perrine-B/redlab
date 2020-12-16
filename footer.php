@@ -1,20 +1,22 @@
 </main>
-<footer class="footer is-light">
-  <div class='columns'>
-    <div class="column has-text-centered">
-      <?php dynamic_sidebar('footer-1'); ?>
+<footer class="footer">
+  <div class='columns is-flex-wrap-wrap'>
+    <div id='company-info' class="footer-widget column is-6 has-text-centered">
+    <?php dynamic_sidebar('footer-logo'); ?>
+    <?php dynamic_sidebar('footer-1'); ?>
     </div>
-    <div class="footer-menu column has-text-centered">
+    <div class="footer-widget column is-6 has-text-centered">
       <?php dynamic_sidebar('footer-2'); ?>
     </div>
-  </div>
-  <div class="content has-text-centered">
+    <div class="footer-menu column is-12">
     <? wp_nav_menu(array(
-                'menu' => 'footer',
-                'menu_id' => 'footer-menu',
-                'menu_class' => "footer-item",
-                )
-            )?>
+      'theme_location' => 'footer',
+      'menu' => 'footer',
+      'menu_id' => 'footer-menu',
+      'menu_class' => "footer-menu",
+      )
+    )?>
+  </div>
   </div>
 </footer>
 </body>
