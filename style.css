@@ -8,10 +8,6 @@ Version: 1.0
 * Basic settings
 */
 
-main {
-    margin-top: 5em;
-}
-
 body,
 h3,
 p,
@@ -37,8 +33,32 @@ h2 {
     margin-top: -23px;
 }
 
+
+/* Ajustement de la taille du logo d'en-tête car Bulma n'arrive pas à le prendre en charge du à la génération dans un lien de l'image */
+
+#logo {
+    padding-right: 60%;
+}
+
 .navbar {
-    box-shadow: 0px -10px 23px 1px #E12C2B;
+    box-shadow: 0px -10px 23px 1px #383B3F;
+}
+
+#navbar {
+    background-color: #E12C2B;
+    padding: 15px 10px;
+}
+
+@media (min-width: 1024px) {
+    #navbar {
+        padding: 15px 10%;
+    }
+    .width-logo {
+        width: 25%;
+    }
+    #logo {
+        padding-right: 20%;
+    }
 }
 
 
@@ -48,13 +68,13 @@ h2 {
 
 #site-title {
     font-size: 4em;
-    color: black;
+    color: #383B3F;
 }
 
 #site-subtitle {
     font-size: 2em;
     font-family: "Oswald, sans-serif";
-    color: black;
+    color: #383B3F;
     margin-left: 1em;
 }
 
@@ -67,7 +87,7 @@ h2 {
 
 .section-title {
     font-size: 2.5em;
-    color: darkgoldenrod;
+    color: #383B3F;
     margin-bottom: 1em;
 }
 
@@ -92,12 +112,19 @@ h2 {
 .menu-item {
     display: flex;
     flex-direction: row;
+    word-wrap: normal;
     justify-content: center;
-    padding: 0.5em;
+    text-decoration: underline;
+    padding: 0em 1.2em;
+    color: #F5F6FB;
+}
+
+.menu-item>a {
+    color: #F5F6FB;
 }
 
 .menu-item:hover>a {
-    color: black;
+    color: #ffffff;
     text-decoration: none;
 }
 
@@ -117,15 +144,15 @@ h2 {
 }
 
 .menu-footer>li {
-    background-color: black;
+    background-color: #383B3F;
 }
 
 li>a {
-    color: grey;
+    color: #383B3F;
 }
 
 li>a:hover {
-    color: black;
+    color: #383B3F;
     text-decoration: none;
 }
 
@@ -141,7 +168,7 @@ li>a:hover {
 }
 
 .widgettitle {
-    color: goldenrod;
+    color: #383B3F;
     font-size: 2em;
     margin-bottom: 0.5em;
 }
@@ -164,7 +191,7 @@ li>a:hover {
 */
 
 #comment-name>a {
-    color: black;
+    color: #383B3F;
 }
 
 
@@ -173,5 +200,5 @@ li>a:hover {
 */
 
 button>a {
-    color: grey;
+    color: #E12C2B;
 }

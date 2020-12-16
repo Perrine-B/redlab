@@ -9,7 +9,7 @@ function add_theme_styles()
   wp_enqueue_style('stylesheet', get_stylesheet_uri());
   wp_enqueue_style('bulma', "https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css");
   wp_enqueue_style('Amaric_font', "https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap");
-  wp_enqueue_style('Oswald_font', "https://fonts.googleapis.com/css2?family=Oswald&display=swap");
+  wp_enqueue_style('Fira_Sans_Light', "https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300&display=swap");
 }
 
 add_action('wp_enqueue_scripts', 'add_theme_scripts');
@@ -57,11 +57,15 @@ function wpm_remove_default_widgets()
 /** Déclaration des éléments */
 
 /** Nav */
-register_nav_menus(array(
-  'main' => 'Menu Principal',
-  'social' => 'Menu réseaux sociaux',
-  'footer' => 'Menu footer'
-));
+function wpb_custom_new_menu()
+{
+  register_nav_menus(array(
+    'main' => __('principal'),
+    'social' => __('Menu réseaux sociaux'),
+    'footer' => __('Menu footer')
+  ));
+}
+add_action('init', 'wpb_custom_new_menu');
 
 /** Sidebars*/
 
