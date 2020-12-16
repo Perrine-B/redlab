@@ -125,44 +125,6 @@ function last_posts_query()
   return $blog_posts;
 }
 
-/* Requête pour faire apparaître les trois derniers articles publiés
- * @return {object}
- */
-
-function get_three_last_posts()
-{
-  $blog_posts = new WP_Query(array(
-    'post_type' => 'post',
-    'post_status’' => 'publish',
-    'posts_per_page' => 3
-  ));
-
-  return $blog_posts;
-}
-
-/* Requête pour faire apparaître le dernier sticky post marqué comme tel dans l'interface d'admin
- * @return {object}
- */
-function get_last_sticky_post()
-{
-  // Get IDs of sticky posts
-  $sticky = get_option('sticky_posts');
-  // first loop to display only my single,
-  // MOST RECENT sticky post
-  $most_recent_sticky_post = new WP_Query(array(
-    // Only sticky posts
-    'post__in' => $sticky,
-    // Treat them as sticky posts
-    'ignore_sticky_posts' => 1,
-    // Order by date to get the most recently published sticky post
-    'orderby' => 'date',
-    // Get only the one most recent
-    'posts_per_page' => 1
-  ));
-
-  return $most_recent_sticky_post;
-}
-
 /** Utils */
 
 /* Retourne le nombre de posts détectés pour une page
@@ -218,3 +180,20 @@ function mytheme_comment($comment, $args, $depth)
   <? endif ?>
 <?php
 }
+
+
+// fonction qui peut servir pour la page auteur
+// function my_post_queries( $query ) {
+//   // vérifier qu'on n'est pas sur une page admin
+//   if ( !is_admin() && $query->is_main_query() ) {
+
+//       if ( is_author() ) {
+
+//           // montrer tous les articles
+//           $query->set( 'posts_per_page', -1 );
+//           $query->set( 'post_type', array( 'post' ) );
+//       }
+
+//   }
+// }
+// add_action( 'pre_get_posts', 'my_post_queries' );

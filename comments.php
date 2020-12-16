@@ -2,6 +2,8 @@
     <!-- si les commentaires sont acceptés !-->
     <?php if (comments_open()) : ?>
         <h2 class='title'>Commentaires<h2>
+
+        <? var_dump(get_comments_number())?>
                 <?php wp_list_comments('type=comment&callback=mytheme_comment'); ?>
                 <article class="message">
                     <?php
