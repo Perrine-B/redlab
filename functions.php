@@ -76,26 +76,19 @@ register_sidebar(array(
 register_sidebar(array(
   'id' => 'footer-1',
   'name' => 'footer-1',
-  'description' => "destiné à accueillir un menu de navigation ou un widget text",
-  'before_widget' => '<div class="menu-footer box is-flex is-flex-direction-column is-justify-content-center is-align-items-center">',
-  'after_widget' => '</div>',
+  'description' => "container pour les informations de localisation",
+  //'before_widget' => '<div class="menu-footer box is-flex is-flex-direction-column is-justify-content-center is-align-items-center">',
+  //'after_widget' => '</div>',
 ));
 
 register_sidebar(array(
   'id' => 'footer-2',
   'name' => 'footer-2',
-  'description' => "destiné à accueillir un menu de navigation ou un widget text",
-  'before_widget' => '<div class="menu-footer box is-flex is-justify-content-center is-flex-direction-column is-align-items-center">',
-  'after_widget' => '</div>',
+  'description' => "container pour le menu d'accès aux réseaux sociaux",
+  //'before_widget' => '<div class="menu-footer box is-flex is-justify-content-center is-flex-direction-column is-align-items-center">',
+  //'after_widget' => '</div>',
 ));
 
-register_sidebar(array(
-  'id' => 'footer-3',
-  'name' => 'footer-3',
-  'description' => "destiné à accueillir un menu de navigation pour les réseaux sociaux",
-  'before_widget' => '<div class="menu-footer box is-flex is-flex-direction-column is-justify-content-center is-align-items-center">',
-  'after_widget' => '</div>',
-));
 
 /** Header */
 
