@@ -14,6 +14,23 @@
         <figure id="logo" class="m-4 image center">
             <?php the_custom_logo(); ?>
         </figure>
+        <div id="dropdown" class="p-2 dropdown is-right">
+            <div class="dropdown-trigger">
+                <button class="button is-rounded" aria-haspopup="true" aria-controls="dropdown-menu">
+                    <span class="icon is-small">
+                        <i class="fas fa-search" aria-hidden="true"></i>
+                    </span>
+                </button>
+            </div>
+            <div class="dropdown-menu" id="dropdown-menu" role="menu" data-target="dropdown">
+            
+                <div class="p-2 dropdown-content">
+                <a class="delete"></a>
+                <?php get_search_form(); ?>
+                </div>
+                
+            </div>
+        </div>
         <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navMenu">
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>

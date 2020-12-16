@@ -59,6 +59,9 @@ h2 {
     #logo {
         padding-right: 20%;
     }
+    #dropdown {
+        display: none;
+    }
 }
 
 a.burger>span {
