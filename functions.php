@@ -47,7 +47,7 @@ function wpm_remove_default_widgets()
   unregister_widget('WP_Widget_Media_Audio'); // Le widget Audio
   unregister_widget('WP_Widget_Media_Video'); // Le widget Vidéo
   unregister_widget('WP_Widget_Custom_HTML'); // Le widget HTML personnalisé
-  // unregister_widget('WP_Widget_Categories'); // Le widget catégories
+  unregister_widget('WP_Widget_Categories'); // Le widget catégories
   unregister_widget('WP_Widget_Recent_Posts'); // Le widget articles récents
   unregister_widget('WP_Widget_RSS'); // Le widget RSS
   unregister_widget('WP_Widget_Meta'); // le widget Méta
@@ -64,14 +64,6 @@ register_nav_menus(array(
 ));
 
 /** Sidebars*/
-
-register_sidebar(array(
-  'id' => 'about',
-  'name' => 'about',
-  'description' => 'une sidebar latérale pour empiler du widget',
-  'before_widget' => '<div class="box is-flex is-flex-direction-column is-align-items-center">',
-  'after_widget' => '</div>',
-));
 
 register_sidebar(array(
   'id' => 'footer-1',
