@@ -7,6 +7,10 @@ Version: 1.0
 * Basic settings
 */
 
+
+body {
+  font-family: "Fira Sans", sans-serif;
+}
 main {
     margin-top: 5em;
 }
@@ -29,15 +33,42 @@ h3 {
 }
 
 h2 {
-    color: goldenrod;
+    color: #383B3F;
 }
 
-.hero {
-    margin-top: -23px;
+
+/* Ajustement de la taille du logo d'en-tête car Bulma n'arrive pas à le prendre en charge du à la génération dans un lien de l'image */
+
+#logo {
+    padding-right: 60%;
 }
 
 .navbar {
-    box-shadow: 0px -10px 23px 1px gray;
+    box-shadow: 0px -10px 23px 1px #383B3F;
+}
+
+#navbar {
+    background-color: #E12C2B;
+    padding: 15px 10px;
+}
+
+@media (min-width: 1024px) {
+    #navbar {
+        padding: 15px 10%;
+    }
+    .width-logo {
+        width: 25%;
+    }
+    #logo {
+        padding-right: 20%;
+    }
+    #dropdown {
+        display: none;
+    }
+}
+
+a.burger>span {
+    color: #F5F6FB;
 }
 
 
@@ -47,13 +78,13 @@ h2 {
 
 #site-title {
     font-size: 4em;
-    color: black;
 }
 
 #site-subtitle {
+
     font-size: 2em;
-    font-family: "Oswald, sans-serif";
-    color: black;
+    font-family: "Fira Sans, sans-serif";
+    color: #383B3F;
     margin-left: 1em;
 }
 
@@ -66,7 +97,7 @@ h2 {
 
 .section-title {
     font-size: 2.5em;
-    color: darkgoldenrod;
+    color: #383B3F;
     margin-bottom: 1em;
 }
 
@@ -74,6 +105,7 @@ h2 {
 /**
 * Menu 
 */
+
 
 #menu-social {
     display: flex;
@@ -91,12 +123,19 @@ h2 {
 .menu-item {
     display: flex;
     flex-direction: row;
+    word-wrap: normal;
     justify-content: center;
-    padding: 0.5em;
+    text-decoration: underline;
+    padding: 0em 1.2em;
+    color: #F5F6FB;
+}
+
+.menu-item>a {
+    color: #F5F6FB;
 }
 
 .menu-item:hover>a {
-    color: black;
+    color: #ffffff;
     text-decoration: none;
 }
 
@@ -111,20 +150,21 @@ h2 {
     flex-direction: column;
 }
 
+
 .menu-footer {
     height: 13em;
 }
 
 .menu-footer>li {
-    background-color: black;
+    background-color: #383B3F;
 }
 
 li>a {
-    color: grey;
+    color: #383B3F;
 }
 
 li>a:hover {
-    color: black;
+    color: #383B3F;
     text-decoration: none;
 }
 
@@ -139,8 +179,9 @@ li>a:hover {
     align-items: center;
 }
 
+
 .widgettitle {
-    color: goldenrod;
+    color: #383B3F;
     font-size: 2em;
     margin-bottom: 0.5em;
 }
@@ -150,7 +191,6 @@ li>a:hover {
     justify-content: center;
     align-items: center;
 }
-
 .box>ul {
     display: flex;
     flex-direction: column;
@@ -202,6 +242,10 @@ li>a:hover {
 .content {
     display: flex;
     flex-direction: column;
+}
+
+#comment-name>a {
+    color: #383B3F;
 }
 
 
@@ -343,4 +387,91 @@ Et le blanc : #FFFFFF :smile:
         margin-top: 3em;
         margin-right: 0
     }
+
+/**
+* Footer
+*/
+
+/*
+Pour le presque noir : #383B3F
+Pour le blanc cassé tirant sur le bleu : #F5F6FB
+Et le blanc : #FFFFFF 
+
+**/
+
+.footer {
+  color: white;
+}
+
+.footer-widget {
+  background-color: #e12c2b;
+}
+
+.footer-menu {
+  display: flex;
+  background-color: #383b3f;
+}
+
+/** Div Adresse*/
+/** organisation des éléments */
+
+#company-info {
+  padding: 2em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#company-info > li > img {
+  width: 8em;
+}
+
+#company-info > li > div.textwidget {
+  margin-left: 1em;
+  text-align: left;
+}
+
+
+
+/** Div Réseaux sociaux*/
+/** organisation des éléments */
+#menu-reseaux-sociaux {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 13em;
+}
+/** set la couleur des icones de réseaux sociaux */
+#menu-reseaux-sociaux > li > a {
+  color: white;
+  font-size: 3em;
+  padding: 0.2em;
+}
+
+/** Menu pages du footer*/
+
+#footer-menu > li > a {
+  font-size: 0.8em;
+  font-family: "Fira-sans, sans-serif";
+  color: white;
+  text-decoration: underline;
+}
+
+#footer-menu {
+  display: flex;
+  justify-content: center;
+}
+
+
+@media only screen and (max-width: 768px) {
+  #company-info {
+    flex-direction: column;
+  }
+  #company-info > li > img {
+    margin-bottom: 2em;
+  }
+  #menu-reseaux-sociaux {
+    height: 4em;
+  }
 }
