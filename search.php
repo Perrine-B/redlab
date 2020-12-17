@@ -51,6 +51,7 @@ yoast_breadcrumb('<p class="ml-5" id="breadcrumbs">', '</p>');
                         <? endif; ?>
                         <!-- end loop -->
             </div>
+            <?php wpex_pagination(); ?>
             <!-- sidebar zone -->
             <div class="tile is-3">
                 <? get_sidebar() ?>
