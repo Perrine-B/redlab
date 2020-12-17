@@ -7,14 +7,6 @@ Version: 1.0
 * Basic settings
 */
 
-
-body {
-  font-family: "Fira Sans", sans-serif;
-}
-main {
-    margin-top: 5em;
-}
-
 body,
 p,
 a {
@@ -264,7 +256,6 @@ li>a:hover {
 /**
 * 404
 */
-
 button>a {
     color: grey;
 }
@@ -380,25 +371,6 @@ Et le blanc : #FFFFFF :smile:
     margin-right: 5em;
 }
 
-@media only screen and (max-width: 768px) {
-    .article-info>h2>ul>li>a {
-        font-size: .6em;
-    }
-    .article-info>h3>a {
-        margin-top: 1em;
-        font-size: .9em;
-    }
-    .article-info>h3 {
-        font-size: .9em;
-    }
-    .article {
-        margin: 2em;
-    }
-    .card.mb-5.is-8 {
-        box-shadow: 98px -98px 0px -78px #E12C2B;
-        margin-top: 3em;
-        margin-right: 0
-    }
 
 /**
 * Sidebar
@@ -417,6 +389,58 @@ Et le blanc : #FFFFFF :smile:
   color: #e12c2b;
   text-decoration: underline;
 }
+
+.categories.card-content.p-4 {
+  background-color:#F5F6FB
+}
+
+.card.mb-5.is-8 {
+  box-shadow: 115px -115px 0px -90px #E12C2B; 
+  margin-right: 5em;
+}
+
+.page-numbers {
+  display: flex;
+flex-direction: row;
+justify-content: center;
+width: 85%;
+}
+
+.page-numbers {
+  color:  #E12C2B; 
+  padding: .5em
+}
+
+.page-numbers.current {
+  color:  #383B3F; 
+  padding-top: 6px;
+}
+
+@media only screen and (max-width: 768px) {
+  .article-info > h2 > ul > li > a {
+    font-size: .6em;
+  }
+  .article-info > h3 > a {
+    margin-top: 1em;
+    font-size: .9em;
+  }
+  
+  .article-info > h3 {
+    font-size: .9em;
+  }
+  .article {
+    margin : 2em;
+  }
+  .card.mb-5.is-8 {
+    box-shadow: 98px -98px 0px -78px #E12C2B; 
+    margin-top: 3em;
+    margin-right: 0
+  }
+  .page-numbers {
+  width: 100%;
+  }
+}
+
 
 .sidebar-link li a:hover{
   color: #383b3f;

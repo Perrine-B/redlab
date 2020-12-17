@@ -1,25 +1,50 @@
 <?php get_header() ?>
-<h1>coucouc les moches </h1>
-<!-- The loop -->
-<? if (have_posts()) : ?>
-<? while (have_posts()) : the_post(); ?>
-<section class="section container is-8">
-    <div class="card m-5 is-8">
-    <?  (the_post_thumbnail()) ?>
-        <div class="card-content">
-            <h1 class='title'>
-                <? the_title()?>
-            </h1>
-            <h2 class="subtitle"> <?php the_category() ?> </h2>
-        <h3><?php the_date() ?></h3>
-        <h3><?php the_author_posts_link(); ?></h3>
-            <div class='mb-5'>
-                <? the_excerpt() ?>
+<section class='m-4'>
+    <? $curauth = ( get_query_var( 'author_name' ) ) ? get_user_by( 'slug', get_query_var( 'author_name' ) ) : get_userdata( get_query_var( 'author' ) ); ?>
+    <h1 class='category title ml-5'><?= $curauth->nickname; ?></h1>
+    <? if (function_exists('yoast_breadcrumb')) {
+yoast_breadcrumb('<p class="ml-5" id="breadcrumbs">', '</p>');
+}?>
+    <div class="container mb-5">
+        <div class="tile is-parent m-4 is-12">
+            <div class="container">
+                <!-- loop -->
+                <!-- article's list zone -->
+                <article class="media tile mb-5 is-12">
+                    <!-- excerpt + permalink zone -->
+                    <? if (have_posts()) : ?>
+                    <? while (have_posts()) : the_post(); ?>
+                    <section class="container is-8">
+                        <div class="card mb-5 is-8">
+                            <figure class=" article-hero image is-3by1">
+                                <img class="is-fullwidth" src=" http://redlab.local/wp-content/uploads/2020/12/photo-1488229297570-58520851e868.jpg">
+                            </figure>
+                            <div class="categories card-content p-4">
+                                <h1 class='title'>
+                                    <? the_title()?>
+                                </h1>
+                                <div class='article-info'>
+                                    <h2 class="subtitle"> <?php the_category() ?> </h2>
+                                    <h3><?php the_date() ?></h3>
+                                    <h3><?php the_author_posts_link(); ?></h3>
+                                </div>
+                                <? the_excerpt() ?>
+                                <a class='permalink' href="<?php the_permalink(); ?>">Lire l'article</a>
+                            </div>
+                        </div>
+                        <!-- end excerpt + permalink zone -->
+                        <!-- end article's list zone -->
+                        <? endwhile; ?>
+                        <? endif; ?>
+                        <!-- end loop -->
+                        <?php wpex_pagination(); ?>
             </div>
+            <!-- sidebar zone -->
+            <div class="tile is-3">
+                <? get_sidebar() ?>
+            </div>
+            <!-- end sidebar zone -->
         </div>
-        <a href=<? the_permalink() ?>>Lire la suite</a>
     </div>
 </section>
-<? endwhile; ?>
-<? endif; ?>
-<?php get_footer() ?>
+<?get_footer() ?>
