@@ -23,6 +23,21 @@
     <div class='container'>
         <? the_content() ?>
     </div>
+    <div class='pagination mt-3 mb-3'>
+    <?php
+    $prev_post = get_previous_post('true');
+    if ($prev_post) {
+        $prev_title = strip_tags(str_replace('"', '', $prev_post->post_title));
+        echo "\t" . '<a rel="prev" href="' . get_permalink($prev_post->ID) . '" title="' . $prev_title . '" class="article-precedent"><h4>' .'< ' . $prev_title . '</h4></a>' . "\n";
+    }
+
+    $next_post = get_next_post('true');
+    if ($next_post) {
+        $next_title = strip_tags(str_replace('"', '', $next_post->post_title));
+        echo '<a rel="next" href="' . get_permalink($next_post->ID) . '" title="' . $next_title . '" class="article-suivant"><h4>' . $next_title . ' >'. '</h4></a>';
+    }
+    ?>
+    </div>
 </section>
 <hr class="solid">
 <section class='article'>

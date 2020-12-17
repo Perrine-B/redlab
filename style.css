@@ -291,3 +291,13 @@ Et le blanc : #FFFFFF :smile:
     margin : 2em;
   }
 }
+
+.pagination  {
+  display: flex;
+  justify-content: space-around;
+}
+
+.pagination > a {
+  color : #E12C2B; 
+  text-decoration: underline;
+}
