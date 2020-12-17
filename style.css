@@ -108,6 +108,10 @@ a.burger>span {
   background-color: #f5f6fb;
 }
 
+.author > a {
+  color: #e12c2b;
+  text-decoration: underline;
+}
 /**
 * Menu 
 */
@@ -234,12 +238,19 @@ li>a:hover {
 
 #form-button {
   display: 'none';
+
+}
+
+.comment-form-cookies-consent {
+  width: 100%;
+  margin-left: 9px;
 }
 
 #submit {
   background-color: #E12C2B;
   border-radius: 12%;
   color: white;
+  margin-top: 1em;
 }
 .content {
   display: flex;

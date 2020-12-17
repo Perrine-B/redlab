@@ -2,13 +2,10 @@
 <!-- The loop -->
 <? if (have_posts()) : ?>
 <? while (have_posts()) : the_post(); ?>
-<? if(has_post_thumbnail()):?>
-<? $img = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'medium')?>
 <figure class=" article-hero image is-3by1">
-    <img class="is-fullwidth" src="<?= $img['0']?>"">
+    <img class="is-fullwidth" src=" http://redlab.local/wp-content/uploads/2020/12/photo-1488229297570-58520851e868.jpg">
 </figure>
-<? endif ?>
-<section class='article first'>
+<section class='article'>
     <?php
     if (function_exists('yoast_breadcrumb')) {
         yoast_breadcrumb('<p id="breadcrumbs">', '</p>');

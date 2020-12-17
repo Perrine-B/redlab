@@ -10,9 +10,9 @@
                     yoast_breadcrumb('<p class="ml-5" id="breadcrumbs">', '</p>');
                 }?>
                 <? if ($count <= 1) : ?>
-                <p> Votre recherche a donné <?= $count ?> résultat </h1>
+                <p class=' p-5'> Votre recherche a donné <?= $count ?> résultat </h1>
                     <? else : ?>
-                    <p> Votre recherche a donné <?= $count ?> résultats </h1>
+                    <p class=' p-5'> Votre recherche a donné <?= $count ?> résultats </h1>
                         <? endif;?>
             </div>
         </section>
