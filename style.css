@@ -13,10 +13,9 @@ main {
 }
 
 body,
-h3,
 p,
 a {
-  font-family: "Roboto", sans-serif;
+  font-family: "Fira Sans Light", sans-serif;
 }
 
 list-style {
@@ -26,11 +25,11 @@ list-style {
 h1,
 h2,
 h3 {
-  font-family: "Amatic SC", cursive;
+  font-family: "Fira Sans Semibold", cursive;
 }
 
 h2 {
-  color: goldenrod;
+  color: #383b3f;
 }
 
 .hero {
@@ -68,6 +67,20 @@ h2 {
   font-size: 2.5em;
   color: darkgoldenrod;
   margin-bottom: 1em;
+}
+
+/**
+* Nouveau style Home
+*/
+.link-article{
+  color: #e12c2b;
+  text-decoration: underline;
+}
+
+#presentation-articles{
+  box-shadow: 115px -115px 0px -90px #E12C2B; 
+  margin-right: 5em;
+  background-color: #f5f6fb;
 }
 
 /**
@@ -168,4 +181,12 @@ li > a:hover {
 
 button > a {
   color: grey;
+}
+
+@media only screen and (max-width: 768px) {
+  #presentation-articles {
+    box-shadow: 98px -98px 0px -78px #E12C2B; 
+    margin-top: 3em;
+    margin-right: 0
+  }
 }
