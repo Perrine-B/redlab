@@ -12,6 +12,7 @@
             <h2 id="site-subtitle">
                 <? bloginfo('description') ?>
             </h2>
+            <?php get_search_form(); ?>
         </div>
     </div>
 </section>
