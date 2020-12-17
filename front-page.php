@@ -1,7 +1,7 @@
 <? get_header(); ?>
 <!-- Get all articles section-->
-<section class='m-4'>
-    <h1 id='site-title'> <?= get_bloginfo('name') ?> </h1>
+<section class='first ml-4 mr-4'>
+    <h1 id='site-title' class='title mt-5'> <?= get_bloginfo('name') ?> </h1>
     <?php
         if (function_exists('yoast_breadcrumb')) {
             yoast_breadcrumb('<p id="breadcrumbs">', '</p>');
@@ -27,7 +27,9 @@
                 <!-- end loop -->
             </div>
             <!-- sidebar zone -->
-                <? get_sidebar() ?>
+            <div class="tile is-3">
+            <? get_sidebar() ?>
+        </div>
             <!-- end sidebar zone -->
         </div>
     </div>

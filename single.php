@@ -8,7 +8,7 @@
     <img class="is-fullwidth" src="<?= $img['0']?>"">
 </figure>
 <? endif ?>
-<section class='article'>
+<section class='article first'>
     <?php
     if (function_exists('yoast_breadcrumb')) {
         yoast_breadcrumb('<p id="breadcrumbs">', '</p>');

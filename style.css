@@ -459,12 +459,15 @@ Et le blanc : #FFFFFF
 
 **/
 
-.footer {
+.company-footer {
   color: white;
 }
 
 .footer-widget {
   background-color: #e12c2b;
+}
+.footer-widget > li {
+  list-style: none;
 }
 
 .footer-menu {
@@ -541,4 +544,9 @@ Et le blanc : #FFFFFF
     margin-top: 3em;
     margin-right: 0
    }
+  }
+
+
+  .first {
+    margin-top: 7em;
   }
