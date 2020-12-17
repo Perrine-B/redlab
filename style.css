@@ -8,164 +8,204 @@ Version: 1.0
 * Basic settings
 */
 
-main {
-  margin-top: 5em;
-}
-
 body,
 h3,
 p,
 a {
-  font-family: "Roboto", sans-serif;
+    font-family: "Roboto", sans-serif;
 }
 
 list-style {
-  display: "none";
+    display: "none";
 }
 
 h1,
 h2,
 h3 {
-  font-family: "Amatic SC", cursive;
+    font-family: "Amatic SC", cursive;
 }
 
 h2 {
-  color: goldenrod;
+    color: #383B3F;
 }
 
 .hero {
-  margin-top: -23px;
+    margin-top: -23px;
+}
+
+
+/* Ajustement de la taille du logo d'en-tête car Bulma n'arrive pas à le prendre en charge du à la génération dans un lien de l'image */
+
+#logo {
+    padding-right: 60%;
 }
 
 .navbar {
-  box-shadow: 0px -10px 23px 1px gray;
+    box-shadow: 0px -10px 23px 1px #383B3F;
 }
+
+#navbar {
+    background-color: #E12C2B;
+    padding: 15px 10px;
+}
+
+@media (min-width: 1024px) {
+    #navbar {
+        padding: 15px 10%;
+    }
+    .width-logo {
+        width: 25%;
+    }
+    #logo {
+        padding-right: 20%;
+    }
+    #dropdown {
+        display: none;
+    }
+}
+
+a.burger>span {
+    color: #F5F6FB;
+}
+
 
 /**
 * Home 
 */
 
 #site-title {
-  font-size: 4em;
-  color: black;
+    font-size: 4em;
+    color: #383B3F;
 }
 
 #site-subtitle {
-  font-size: 2em;
-  font-family: "Oswald, sans-serif";
-  color: black;
-  margin-left: 1em;
+    font-size: 2em;
+    font-family: "Oswald, sans-serif";
+    color: #383B3F;
+    margin-left: 1em;
 }
 
 .homeicon {
-  background-image: url("./assets/img/logo.png");
-  background-repeat: no-repeat;
-  background-position: left;
-  padding-left: 5px;
+    background-image: url("./assets/img/logo.png");
+    background-repeat: no-repeat;
+    background-position: left;
+    padding-left: 5px;
 }
 
 .section-title {
-  font-size: 2.5em;
-  color: darkgoldenrod;
-  margin-bottom: 1em;
+    font-size: 2.5em;
+    color: #383B3F;
+    margin-bottom: 1em;
 }
+
 
 /**
 * Menu 
 */
 
 #menu-social {
-  display: flex;
+    display: flex;
 }
 
-#main-menu > ul {
-  display: flex;
-  flex-direction: row;
+#main-menu>ul {
+    display: flex;
+    flex-direction: row;
 }
 
-#main-menu > ul > li {
-  margin-right: 1em;
+#main-menu>ul>li {
+    margin-right: 1em;
 }
 
 .menu-item {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  padding: 0.5em;
+    display: flex;
+    flex-direction: row;
+    word-wrap: normal;
+    justify-content: center;
+    text-decoration: underline;
+    padding: 0em 1.2em;
+    color: #F5F6FB;
 }
 
-.menu-item:hover > a {
-  color: black;
-  text-decoration: none;
+.menu-item>a {
+    color: #F5F6FB;
 }
 
-.is-active > div {
-  display: flex;
-  justify-content: center;
-  padding: 1em;
+.menu-item:hover>a {
+    color: #ffffff;
+    text-decoration: none;
 }
 
-.is-active > div > div > ul {
-  display: flex;
-  flex-direction: column;
+.is-active>div {
+    display: flex;
+    justify-content: center;
+    padding: 1em;
+}
+
+.is-active>div>div>ul {
+    display: flex;
+    flex-direction: column;
 }
 
 .menu-footer {
-  height: 13em;
+    height: 13em;
 }
 
-.menu-footer > li {
-  background-color: black;
+.menu-footer>li {
+    background-color: #383B3F;
 }
 
-li > a {
-  color: grey;
+li>a {
+    color: #383B3F;
 }
 
-li > a:hover {
-  color: black;
-  text-decoration: none;
+li>a:hover {
+    color: #383B3F;
+    text-decoration: none;
 }
+
 
 /**
 * Widget
 */
 
-.textwidget > p {
-  display: flex;
-  flex-direction: column-reverse;
-  align-items: center;
+.textwidget>p {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
 }
 
 .widgettitle {
-  color: goldenrod;
-  font-size: 2em;
-  margin-bottom: 0.5em;
+    color: #383B3F;
+    font-size: 2em;
+    margin-bottom: 0.5em;
 }
 
-.box > img {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.box>img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-.box > ul {
-  display: flex;
-  flex-direction: column;
-  padding: 1em;
+
+.box>ul {
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
 }
+
 
 /**
 * Comments
 */
 
-#comment-name > a {
-  color: black;
+#comment-name>a {
+    color: #383B3F;
 }
+
 
 /**
 * 404
 */
 
-button > a {
-  color: grey;
+button>a {
+    color: #E12C2B;
 }
