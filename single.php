@@ -2,22 +2,46 @@
 <!-- The loop -->
 <? if (have_posts()) : ?>
 <? while (have_posts()) : the_post(); ?>
-<section class="section container is-8">
-    <div class="card m-5 is-8">
-        <div class="card-content">
-            <h1 class='title'>
-                <? the_title()?>
-            </h1>
-            <h2 class="subtitle">par <?php the_author() ?></h2>
-            <div class='mb-5'>
-                <? the_excerpt() ?>
-            </div>
-            <?  (the_post_thumbnail()) ?>
-        </div>
-        <div class='container m-3 p-3'>
-            <? the_content() ?>
-        </div>
+<figure class=" article-hero image is-3by1">
+    <img class="is-fullwidth" src=" http://redlab.local/wp-content/uploads/2020/12/photo-1488229297570-58520851e868.jpg">
+</figure>
+<section class='article'>
+    <?php
+    if (function_exists('yoast_breadcrumb')) {
+        yoast_breadcrumb('<p id="breadcrumbs">', '</p>');
+    }
+    ?>
+    <h1 class='title'>
+        <? the_title()?>
+    </h1>
+    <? $authorId = get_the_author_ID()?>
+    <div class='article-info'>
+        <h2 class="subtitle"> <?php the_category() ?> </h2>
+        <h3><?php the_date() ?></h3>
+        <h3><?php the_author_posts_link(); ?></h3>
     </div>
+    <div class='container'>
+        <? the_content() ?>
+    </div>
+    <div class='pagination mt-3 mb-3'>
+    <?php
+    $prev_post = get_previous_post('true');
+    if ($prev_post) {
+        $prev_title = strip_tags(str_replace('"', '', $prev_post->post_title));
+        echo "\t" . '<a rel="prev" href="' . get_permalink($prev_post->ID) . '" title="' . $prev_title . '" class="article-precedent"><h4>' .'< ' . $prev_title . '</h4></a>' . "\n";
+    }
+
+    $next_post = get_next_post('true');
+    if ($next_post) {
+        $next_title = strip_tags(str_replace('"', '', $next_post->post_title));
+        echo '<a rel="next" href="' . get_permalink($next_post->ID) . '" title="' . $next_title . '" class="article-suivant"><h4>' . $next_title . ' >'. '</h4></a>';
+    }
+    ?>
+    </div>
+</section>
+<hr class="solid">
+<section class='article'>
+    <? comments_template()?>
 </section>
 <? endwhile; ?>
 <? endif; ?>

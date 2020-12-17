@@ -8,9 +8,9 @@ function add_theme_styles()
 {
   wp_enqueue_style('stylesheet', get_stylesheet_uri());
   wp_enqueue_style('bulma', "https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css");
-  wp_enqueue_style('Amaric_font', "https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap");
-  wp_enqueue_style('Oswald_font', "https://fonts.googleapis.com/css2?family=Oswald&display=swap");
+  wp_enqueue_style('Fira_Sans_Light', "https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300&display=swap");
 }
+
 
 add_action('wp_enqueue_scripts', 'add_theme_scripts');
 
@@ -57,45 +57,42 @@ function wpm_remove_default_widgets()
 /** Déclaration des éléments */
 
 /** Nav */
-register_nav_menus(array(
-  'main' => 'Menu Principal',
-  'social' => 'Menu réseaux sociaux',
-  'footer' => 'Menu footer'
-));
+function wpb_custom_new_menu()
+{
+  register_nav_menus(array(
+    'main' => __('principal'),
+    'social' => __('Menu réseaux sociaux'),
+    'footer' => __('Menu footer')
+  ));
+}
+add_action('init', 'wpb_custom_new_menu');
 
 /** Sidebars*/
 
 register_sidebar(array(
-  'id' => 'about',
-  'name' => 'about',
-  'description' => 'une sidebar latérale pour empiler du widget',
-  'before_widget' => '<div class="box is-flex is-flex-direction-column is-align-items-center">',
-  'after_widget' => '</div>',
+  'id' => 'footer-1',
+  'name' => 'footer-1',
+  'description' => "container pour les informations de localisation",
+  //'before_widget' => '<div class="menu-footer box is-flex is-flex-direction-column is-justify-content-center is-align-items-center">',
+  //'after_widget' => '</div>',
 ));
 
 register_sidebar(array(
-  'id' => 'footer-1',
-  'name' => 'footer-1',
-  'description' => "destiné à accueillir un menu de navigation ou un widget text",
-  'before_widget' => '<div class="menu-footer box is-flex is-flex-direction-column is-justify-content-center is-align-items-center">',
-  'after_widget' => '</div>',
+  'id' => 'footer-logo',
+  'name' => 'footer-logo',
+  'description' => "container le logo du footer",
+  //'before_widget' => '<div class="menu-footer box is-flex is-flex-direction-column is-justify-content-center is-align-items-center">',
+  //'after_widget' => '</div>',
 ));
 
 register_sidebar(array(
   'id' => 'footer-2',
   'name' => 'footer-2',
-  'description' => "destiné à accueillir un menu de navigation ou un widget text",
-  'before_widget' => '<div class="menu-footer box is-flex is-justify-content-center is-flex-direction-column is-align-items-center">',
-  'after_widget' => '</div>',
+  'description' => "container pour le menu d'accès aux réseaux sociaux",
+  //'before_widget' => '<div class="menu-footer box is-flex is-justify-content-center is-flex-direction-column is-align-items-center">',
+  //'after_widget' => '</div>',
 ));
 
-register_sidebar(array(
-  'id' => 'footer-3',
-  'name' => 'footer-3',
-  'description' => "destiné à accueillir un menu de navigation pour les réseaux sociaux",
-  'before_widget' => '<div class="menu-footer box is-flex is-flex-direction-column is-justify-content-center is-align-items-center">',
-  'after_widget' => '</div>',
-));
 
 /** Header */
 
@@ -123,44 +120,6 @@ function last_posts_query()
     )
   );
   return $blog_posts;
-}
-
-/* Requête pour faire apparaître les trois derniers articles publiés
- * @return {object}
- */
-
-function get_three_last_posts()
-{
-  $blog_posts = new WP_Query(array(
-    'post_type' => 'post',
-    'post_status’' => 'publish',
-    'posts_per_page' => 3
-  ));
-
-  return $blog_posts;
-}
-
-/* Requête pour faire apparaître le dernier sticky post marqué comme tel dans l'interface d'admin
- * @return {object}
- */
-function get_last_sticky_post()
-{
-  // Get IDs of sticky posts
-  $sticky = get_option('sticky_posts');
-  // first loop to display only my single,
-  // MOST RECENT sticky post
-  $most_recent_sticky_post = new WP_Query(array(
-    // Only sticky posts
-    'post__in' => $sticky,
-    // Treat them as sticky posts
-    'ignore_sticky_posts' => 1,
-    // Order by date to get the most recently published sticky post
-    'orderby' => 'date',
-    // Get only the one most recent
-    'posts_per_page' => 1
-  ));
-
-  return $most_recent_sticky_post;
 }
 
 /** Utils */
@@ -194,8 +153,9 @@ function mytheme_comment($comment, $args, $depth)
   $GLOBALS['comment'] = $comment; ?>
 
   <? if( isset($comment)) :?>
+   
   <? $newDate = date("d/m/Y", strtotime(get_comment_date()));?>
-  <div class="box mt-5" id="<?php comment_class(); ?> id=" comment-<?php comment_ID() ?>">
+  <div class="container mt-5" id="<?php comment_class(); ?> id=" comment-<?php comment_ID() ?>">
     <article class="media">
       <div class="media-left">
         <figure class="image is-64x64">
@@ -204,13 +164,12 @@ function mytheme_comment($comment, $args, $depth)
       </div>
       <div class="media-content">
         <div class="content">
-          <p>
-            <strong id='comment-name'>
-              <? echo get_comment_author() ?></strong> <small>
-              <? echo $newDate ?></small>
-            <br>
-            <?php comment_text() ?>
-          </p>
+            <p><strong id='comment-name'>
+              <? echo get_comment_author() ?></strong></p> 
+              <p class="comment-date"><small>
+              <?= get_comment_date() ?></small>
+              <div class="comment"></p>
+              <p><?= comment_text() ?></p>
         </div>
       </div>
     </article>
@@ -218,7 +177,6 @@ function mytheme_comment($comment, $args, $depth)
   <? endif ?>
 <?php
 }
-
 
 // Numbered Pagination
 if ( !function_exists( 'wpex_pagination' ) ) {
