@@ -1,67 +1,35 @@
-/*
-* Template Name: Home
-* description: Page template sans sidebar
-*/
-
 <? get_header(); ?>
-<!-- Hero section -->
-<section class="hero is-large is-primary is-bold" style="background-image: url(<?= header_image() ?>)">
-    <div class="hero-body">
-        <div class="container">
-            <h1 id='site-title'> <?php bloginfo('name'); ?> </h1>
-            <h2 id="site-subtitle">
-                <? bloginfo('description') ?>
-            </h2>
-            <?php get_search_form(); ?>
+<!-- Get all articles section-->
+<section class='m-4'>
+    <h1 id='site-title'> <?= get_bloginfo('name') ?> </h1>
+    <?php
+        if (function_exists('yoast_breadcrumb')) {
+            yoast_breadcrumb('<p id="breadcrumbs">', '</p>');
+        }
+        ?>
+    <? $blog_posts = last_posts_query() ?>
+    <div class="container mb-5">
+        <div class="tile is-parent m-4 is-12">
+            <div class="tile is-child is-9 columns is-flex-wrap-wrap">
+                <!-- loop -->
+                <?php if (have_posts()) : ?>
+                        <?php while (have_posts()) : the_post(); ?>
+                            <div class="column p-5 mt-5 mb-5 is-one-quarter" id="presentation-articles">
+                            <?php the_post_thumbnail('post-thumbnail', ['class' => 'card-img-top', 'alt' =>'', 'style' => 'height: auto;']) ?>
+                                <img class="card-img-top">
+                                <a href="<?php the_permalink() ?>"><h2 class="card-title"><?php the_title() ?></h2></a>
+                                <p class="card-post-meta"><?php the_date(); ?> par <a href="#"><?php the_author() ?></a></p>
+                                <?php the_excerpt(); ?>
+                                <a class="has-text-right link-article" href="<?php the_permalink() ?>">Lire l'article complet</a>
+                            </div>
+                        <?php endwhile; ?>
+                <?php endif; ?>
+                <!-- end loop -->
+            </div>
+            <!-- sidebar zone -->
+                <? get_sidebar() ?>
+            <!-- end sidebar zone -->
         </div>
     </div>
 </section>
-<!-- end Hero section -->
-<!-- Last sticky section -->
-<? $most_recent_sticky_post= get_last_sticky_post();?>
-<?php while ($most_recent_sticky_post->have_posts()) :  $most_recent_sticky_post->the_post(); ?>
-    <section class="hero is-medium is-bold border">
-        <div class="hero-body">
-            <div class="container">
-                <h2 class='section-title'> A la une </h2>
-                <h2 class='title'>
-                    <? the_title()?>
-                </h2>
-                <p class="card-text">
-                    <? the_excerpt() ?>
-                </p>
-                <a href=<? the_permalink() ?> class="btn btn-info">Lire la suite</a>
-            </div>
-        </div>
-    </section>
-    <? $var = get_the_ID(); ?>
-<?php endwhile;
-wp_reset_query(); ?>
-<!-- end Last sticky section -->
-<!-- Last Three posts section -->
-<? $blog_posts = get_three_last_posts();?>
-<? if(wp_count_posts()->publish >= 3) :?>
-<section class="hero is-small is-light is-bold">
-    <div class="hero-body">
-        <div class='container'>
-            <h2 class='section-title'>Derniers posts</h2>
-            <div class='columns'>
-                <?php while ($blog_posts->have_posts()) : $blog_posts->the_post(); ?>
-                    <?php if ($var != get_the_ID()) : ?>
-                        <div class="column p-2">
-                            <h3 class="title">
-                                <? the_title() ?>
-                            </h3>
-                            <p class="card-text">
-                                <? the_excerpt() ?>
-                            </p>
-                            <a href=<? the_permalink() ?> class="btn btn-info">Lire la suite</a>
-                        </div>
-                    <?php endif; ?>
-                <?php endwhile; ?>
-            </div>
-        </div>
-</section>
-<? endif ?>
-<!-- end last three posts section -->
-<? get_footer(); ?>
+<?get_footer() ?>

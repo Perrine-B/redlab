@@ -16,10 +16,9 @@ main {
 }
 
 body,
-h3,
 p,
 a {
-  font-family: "Fira Sans", sans-serif;
+  font-family: "Fira Sans Light", sans-serif;
 }
 
 list-style {
@@ -28,15 +27,15 @@ list-style {
 
 h1,
 h2,
+h3 {
+  font-family: "Fira Sans Semibold", cursive;
+}
+
+h2,
 h3,
 h4 {
-    font-family: 'Fira Sans', sans-serif;
+    color: #383b3f;
 }
-
-h2 {
-    color: #383B3F;
-}
-
 
 /* Ajustement de la taille du logo d'en-tête car Bulma n'arrive pas à le prendre en charge du à la génération dans un lien de l'image */
 
@@ -102,6 +101,20 @@ a.burger>span {
     margin-bottom: 1em;
 }
 
+
+/**
+* Nouveau style Home
+*/
+.link-article{
+  color: #e12c2b;
+  text-decoration: underline;
+}
+
+#presentation-articles{
+  box-shadow: 115px -115px 0px -90px #E12C2B; 
+  margin-right: 5em;
+  background-color: #f5f6fb;
+}
 
 /**
 * Menu 
@@ -457,7 +470,6 @@ Et le blanc : #FFFFFF
 }
 
 
-
 /** Div Réseaux sociaux*/
 /** organisation des éléments */
 #menu-reseaux-sociaux {
@@ -500,3 +512,11 @@ Et le blanc : #FFFFFF
     height: 4em;
   }
 }
+  
+ @media only screen and (max-width: 768px) {
+  #presentation-articles {
+    box-shadow: 98px -98px 0px -78px #E12C2B; 
+    margin-top: 3em;
+    margin-right: 0
+   }
+  }
