@@ -122,44 +122,6 @@ function last_posts_query()
   return $blog_posts;
 }
 
-/* Requête pour faire apparaître les trois derniers articles publiés
- * @return {object}
- */
-
-function get_three_last_posts()
-{
-  $blog_posts = new WP_Query(array(
-    'post_type' => 'post',
-    'post_status’' => 'publish',
-    'posts_per_page' => 3
-  ));
-
-  return $blog_posts;
-}
-
-/* Requête pour faire apparaître le dernier sticky post marqué comme tel dans l'interface d'admin
- * @return {object}
- */
-function get_last_sticky_post()
-{
-  // Get IDs of sticky posts
-  $sticky = get_option('sticky_posts');
-  // first loop to display only my single,
-  // MOST RECENT sticky post
-  $most_recent_sticky_post = new WP_Query(array(
-    // Only sticky posts
-    'post__in' => $sticky,
-    // Treat them as sticky posts
-    'ignore_sticky_posts' => 1,
-    // Order by date to get the most recently published sticky post
-    'orderby' => 'date',
-    // Get only the one most recent
-    'posts_per_page' => 1
-  ));
-
-  return $most_recent_sticky_post;
-}
-
 /** Utils */
 
 /* Retourne le nombre de posts détectés pour une page
@@ -191,8 +153,9 @@ function mytheme_comment($comment, $args, $depth)
   $GLOBALS['comment'] = $comment; ?>
 
   <? if( isset($comment)) :?>
+   
   <? $newDate = date("d/m/Y", strtotime(get_comment_date()));?>
-  <div class="box mt-5" id="<?php comment_class(); ?> id=" comment-<?php comment_ID() ?>">
+  <div class="container mt-5" id="<?php comment_class(); ?> id=" comment-<?php comment_ID() ?>">
     <article class="media">
       <div class="media-left">
         <figure class="image is-64x64">
@@ -201,13 +164,12 @@ function mytheme_comment($comment, $args, $depth)
       </div>
       <div class="media-content">
         <div class="content">
-          <p>
-            <strong id='comment-name'>
-              <? echo get_comment_author() ?></strong> <small>
-              <? echo $newDate ?></small>
-            <br>
-            <?php comment_text() ?>
-          </p>
+            <p><strong id='comment-name'>
+              <? echo get_comment_author() ?></strong></p> 
+              <p class="comment-date"><small>
+              <?= get_comment_date() ?></small>
+              <div class="comment"></p>
+              <p><?= comment_text() ?></p>
         </div>
       </div>
     </article>
@@ -215,3 +177,4 @@ function mytheme_comment($comment, $args, $depth)
   <? endif ?>
 <?php
 }
+

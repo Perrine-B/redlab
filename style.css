@@ -18,7 +18,7 @@ main {
 body,
 p,
 a {
-  font-family: "Fira Sans Light", sans-serif;
+  font-family: 'Fira Sans', sans-serif;
 }
 
 list-style {
@@ -28,7 +28,7 @@ list-style {
 h1,
 h2,
 h3 {
-  font-family: "Fira Sans Semibold", cursive;
+  font-family: 'Fira Sans', sans-serif;
 }
 
 h2,
@@ -217,45 +217,43 @@ li>a:hover {
 */
 
 #comment-name {
-    color: #E12C2B;
-    margin-bottom: 0;
+  color: #E12C2B;
+  margin-bottom: 0;
 }
 
-.comment-date,
+.comment-date, .comment {
+  color : #383B3F; 
+}
+
+.name, .email {
+  width: 48%;
+  margin: auto
+}
 .comment {
-    color: #383B3F;
-}
-
-.name,
-.email {
-    width: 48%;
-    margin: auto
-}
-
-.comment {
-    width: 98%;
-    margin: auto
+  width: 98%;
+  margin: auto
 }
 
 #commentform {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
 }
 
 #form-button {
-    display: 'none';
+  display: 'none';
 }
 
 #submit {
-    background-color: #E12C2B;
-    border-radius: 12%;
-    color: white;
+  background-color: #E12C2B;
+  border-radius: 12%;
+  color: white;
 }
-
 .content {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
+    color: #E12C2B;
+    margin-bottom: 0;
 }
 
 #comment-name>a {
@@ -512,7 +510,7 @@ Et le blanc : #FFFFFF
     height: 4em;
   }
 }
-  
+
  @media only screen and (max-width: 768px) {
   #presentation-articles {
     box-shadow: 98px -98px 0px -78px #E12C2B; 
