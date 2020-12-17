@@ -1,7 +1,8 @@
 <?php get_header() ?>
 <section class='m-4'>
-<h1 class='category title ml-5'><?= single_term_title("", false); ?></h1>
-<? if (function_exists('yoast_breadcrumb')) {
+    <? $curauth = ( get_query_var( 'author_name' ) ) ? get_user_by( 'slug', get_query_var( 'author_name' ) ) : get_userdata( get_query_var( 'author' ) ); ?>
+    <h1 class='category title ml-5'><?= $curauth->nickname; ?></h1>
+    <? if (function_exists('yoast_breadcrumb')) {
 yoast_breadcrumb('<p class="ml-5" id="breadcrumbs">', '</p>');
 }?>
     <div class="container mb-5">
@@ -36,6 +37,7 @@ yoast_breadcrumb('<p class="ml-5" id="breadcrumbs">', '</p>');
                         <? endwhile; ?>
                         <? endif; ?>
                         <!-- end loop -->
+                        <?php wpex_pagination(); ?>
             </div>
             <!-- sidebar zone -->
             <div class="tile is-3">
