@@ -19,7 +19,7 @@ body,
 h3,
 p,
 a {
-    font-family: 'Fira Sans', sans-serif;
+  font-family: "Fira Sans", sans-serif;
 }
 
 list-style {
@@ -28,7 +28,8 @@ list-style {
 
 h1,
 h2,
-h3 {
+h3,
+h4 {
     font-family: 'Fira Sans', sans-serif;
 }
 
@@ -181,9 +182,9 @@ li>a:hover {
 
 
 .widgettitle {
-    color: #383B3F;
-    font-size: 2em;
-    margin-bottom: 0.5em;
+  color: #383b3f;
+  font-size: 2em;
+  margin-bottom: 0.5em;
 }
 
 .box>img {
@@ -388,6 +389,30 @@ Et le blanc : #FFFFFF :smile:
         margin-right: 0
     }
 
+/**
+* Sidebar
+*/
+
+.blog-sidebar div{
+  background-color: #f5f6fb;
+}
+
+.blog-sidebar div h4{
+  color: #383b3f;
+  font-size: 18px;
+}
+
+.sidebar-link li a{
+  color: #e12c2b;
+  text-decoration: underline;
+}
+
+.sidebar-link li a:hover{
+  color: #383b3f;
+}
+  
+  
+  
 /**
 * Footer
 */

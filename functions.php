@@ -70,14 +70,6 @@ add_action('init', 'wpb_custom_new_menu');
 /** Sidebars*/
 
 register_sidebar(array(
-  'id' => 'about',
-  'name' => 'about',
-  'description' => 'une sidebar latérale pour empiler du widget',
-  'before_widget' => '<div class="box is-flex is-flex-direction-column is-align-items-center">',
-  'after_widget' => '</div>',
-));
-
-register_sidebar(array(
   'id' => 'footer-1',
   'name' => 'footer-1',
   'description' => "container pour les informations de localisation",
