@@ -15,15 +15,15 @@
                 <?php if (have_posts()) : ?>
                         <?php while (have_posts()) : the_post(); ?>
                             <div class="column p-5 mt-5 mb-5 is-one-quarter" id="presentation-articles">
-                            <?php the_post_thumbnail('post-thumbnail', ['class' => 'card-img-top', 'alt' =>'', 'style' => 'height: auto;']) ?>
-                                <img class="card-img-top">
-                                <a href="<?php the_permalink() ?>"><h2 class="card-title"><?php the_title() ?></h2></a>
-                                <p class="card-post-meta"><?php the_date(); ?> par <a href="#"><?php the_author() ?></a></p>
+                            <?php the_post_thumbnail() ?>
+                                <a href="<?php the_permalink() ?>"><h2 class="card-title title p-2git "><?php the_title() ?></h2></a>
+                                <p><?= get_the_date() ?> par <a href="#"><?php the_author() ?></a></p>
                                 <?php the_excerpt(); ?>
                                 <a class="has-text-right link-article" href="<?php the_permalink() ?>">Lire l'article complet</a>
                             </div>
                         <?php endwhile; ?>
                 <?php endif; ?>
+                <?php wpex_pagination(); ?>
                 <!-- end loop -->
             </div>
             <!-- sidebar zone -->
