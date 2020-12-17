@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
     <meta charset="UTF-8">
@@ -9,9 +9,9 @@
     <? wp_head() ?>
 </head>
 <!-- nav -->
-<nav class="navbar is-fixed-top is-secondary" aria-label="main navigation">
-    <div class="navbar-brand is-flex is-flex-direction-row is-align-items-center">
-        <figure class="m-2 image is-rounded is-64x64">
+<nav id="navbar" class="navbar is-fixed-top is-secondary is-spaced" aria-label="main navigation">
+    <div class="navbar-brand is-flex is-flex-direction-row width-logo is-align-items-center">
+        <figure id="logo" class="m-4 image center">
             <?php the_custom_logo(); ?>
         </figure>
         <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navMenu">
