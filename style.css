@@ -8,21 +8,12 @@ Version: 1.0
 * Basic settings
 */
 
-body,
-h3,
-p,
-a {
-    font-family: "Roboto", sans-serif;
-}
 
-list-style {
-    display: "none";
+body {
+  font-family: "Fira Sans", sans-serif;
 }
-
-h1,
-h2,
-h3 {
-    font-family: "Amatic SC", cursive;
+main {
+  margin-top: 5em;
 }
 
 h2 {
@@ -79,8 +70,9 @@ a.burger>span {
 }
 
 #site-subtitle {
+
     font-size: 2em;
-    font-family: "Oswald, sans-serif";
+    font-family: "Fira Sans, sans-serif";
     color: #383B3F;
     margin-left: 1em;
 }
@@ -102,6 +94,7 @@ a.burger>span {
 /**
 * Menu 
 */
+
 
 #menu-social {
     display: flex;
@@ -146,6 +139,7 @@ a.burger>span {
     flex-direction: column;
 }
 
+
 .menu-footer {
     height: 13em;
 }
@@ -168,11 +162,13 @@ li>a:hover {
 * Widget
 */
 
+
 .textwidget>p {
     display: flex;
     flex-direction: column-reverse;
     align-items: center;
 }
+
 
 .widgettitle {
     color: #383B3F;
@@ -180,18 +176,18 @@ li>a:hover {
     margin-bottom: 0.5em;
 }
 
+
 .box>img {
     display: flex;
     justify-content: center;
     align-items: center;
-}
 
+}
 .box>ul {
     display: flex;
     flex-direction: column;
     padding: 1em;
 }
-
 
 /**
 * Comments
@@ -206,6 +202,95 @@ li>a:hover {
 * 404
 */
 
-button>a {
-    color: #E12C2B;
+
+button > a {
+  color: grey;
+}
+
+/**
+* Footer
+*/
+
+/*
+Pour le presque noir : #383B3F
+Pour le blanc cassé tirant sur le bleu : #F5F6FB
+Et le blanc : #FFFFFF 
+
+**/
+
+.footer {
+  color: white;
+}
+
+.footer-widget {
+  background-color: #e12c2b;
+}
+
+.footer-menu {
+  display: flex;
+  background-color: #383b3f;
+}
+
+/** Div Adresse*/
+/** organisation des éléments */
+
+#company-info {
+  padding: 2em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#company-info > li > img {
+  width: 8em;
+}
+
+#company-info > li > div.textwidget {
+  margin-left: 1em;
+  text-align: left;
+}
+
+
+
+/** Div Réseaux sociaux*/
+/** organisation des éléments */
+#menu-reseaux-sociaux {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 13em;
+}
+/** set la couleur des icones de réseaux sociaux */
+#menu-reseaux-sociaux > li > a {
+  color: white;
+  font-size: 3em;
+  padding: 0.2em;
+}
+
+/** Menu pages du footer*/
+
+#footer-menu > li > a {
+  font-size: 0.8em;
+  font-family: "Fira-sans, sans-serif";
+  color: white;
+  text-decoration: underline;
+}
+
+#footer-menu {
+  display: flex;
+  justify-content: center;
+}
+
+
+@media only screen and (max-width: 768px) {
+  #company-info {
+    flex-direction: column;
+  }
+  #company-info > li > img {
+    margin-bottom: 2em;
+  }
+  #menu-reseaux-sociaux {
+    height: 4em;
+  }
 }

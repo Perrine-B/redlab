@@ -23,12 +23,12 @@
     <div id='navMenu' class="navbar-menu">
         <div class="navbar-end is-flex is-align-items-center">
             <? wp_nav_menu(array(
-       'theme_location' => 'main',
-       'menu' => 'main',
-       'menu_id' => 'main-menu',
-       'menu_class' => "menu-item",
-        )
-  )?>
+                 'theme_location' => 'main',
+                 'menu' => 'main',
+                 'menu_id' => 'main-menu',
+                 'menu_class' => "menu-item",
+                  )
+            )?>
         </div>
     </div>
 </nav>

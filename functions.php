@@ -8,9 +8,9 @@ function add_theme_styles()
 {
   wp_enqueue_style('stylesheet', get_stylesheet_uri());
   wp_enqueue_style('bulma', "https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css");
-  wp_enqueue_style('Amaric_font', "https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap");
-  wp_enqueue_style('Fira_Sans_Light', "https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300&display=swap");
+  wp_enqueue_style('Fira_font', "https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300&display=swap");
 }
+
 
 add_action('wp_enqueue_scripts', 'add_theme_scripts');
 
@@ -80,26 +80,27 @@ register_sidebar(array(
 register_sidebar(array(
   'id' => 'footer-1',
   'name' => 'footer-1',
-  'description' => "destiné à accueillir un menu de navigation ou un widget text",
-  'before_widget' => '<div class="menu-footer box is-flex is-flex-direction-column is-justify-content-center is-align-items-center">',
-  'after_widget' => '</div>',
+  'description' => "container pour les informations de localisation",
+  //'before_widget' => '<div class="menu-footer box is-flex is-flex-direction-column is-justify-content-center is-align-items-center">',
+  //'after_widget' => '</div>',
+));
+
+register_sidebar(array(
+  'id' => 'footer-logo',
+  'name' => 'footer-logo',
+  'description' => "container le logo du footer",
+  //'before_widget' => '<div class="menu-footer box is-flex is-flex-direction-column is-justify-content-center is-align-items-center">',
+  //'after_widget' => '</div>',
 ));
 
 register_sidebar(array(
   'id' => 'footer-2',
   'name' => 'footer-2',
-  'description' => "destiné à accueillir un menu de navigation ou un widget text",
-  'before_widget' => '<div class="menu-footer box is-flex is-justify-content-center is-flex-direction-column is-align-items-center">',
-  'after_widget' => '</div>',
+  'description' => "container pour le menu d'accès aux réseaux sociaux",
+  //'before_widget' => '<div class="menu-footer box is-flex is-justify-content-center is-flex-direction-column is-align-items-center">',
+  //'after_widget' => '</div>',
 ));
 
-register_sidebar(array(
-  'id' => 'footer-3',
-  'name' => 'footer-3',
-  'description' => "destiné à accueillir un menu de navigation pour les réseaux sociaux",
-  'before_widget' => '<div class="menu-footer box is-flex is-flex-direction-column is-justify-content-center is-align-items-center">',
-  'after_widget' => '</div>',
-));
 
 /** Header */
 
