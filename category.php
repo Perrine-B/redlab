@@ -14,11 +14,11 @@ yoast_breadcrumb('<p class="ml-5" id="breadcrumbs">', '</p>');
                     <? if (have_posts()) : ?>
                     <? while (have_posts()) : the_post(); ?>
                     <section class="container is-8">
-                        <div class="card mb-5 mr-5 is-8">
+                        <div class="card mb-5 is-8">
                             <figure class=" article-hero image is-3by1">
                                 <img class="is-fullwidth" src=" http://redlab.local/wp-content/uploads/2020/12/photo-1488229297570-58520851e868.jpg">
                             </figure>
-                            <div class="card-content p-4">
+                            <div class="categories card-content p-4">
                                 <h1 class='title'>
                                     <? the_title()?>
                                 </h1>

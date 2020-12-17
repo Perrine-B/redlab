@@ -296,6 +296,15 @@ Et le blanc : #FFFFFF :smile:
   padding: 2em
 }
 
+.categories.card-content.p-4 {
+  background-color:#F5F6FB
+}
+
+.card.mb-5.is-8 {
+  box-shadow: 115px -115px 0px -90px #E12C2B; 
+  margin-right: 5em;
+}
+
 @media only screen and (max-width: 768px) {
   .article-info > h2 > ul > li > a {
     font-size: .6em;
@@ -310,6 +319,11 @@ Et le blanc : #FFFFFF :smile:
   }
   .article {
     margin : 2em;
+  }
+  .card.mb-5.is-8 {
+    box-shadow: 98px -98px 0px -78px #E12C2B; 
+    margin-top: 3em;
+    margin-right: 0
   }
 }
 
