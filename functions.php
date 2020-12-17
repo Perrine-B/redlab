@@ -156,8 +156,9 @@ function mytheme_comment($comment, $args, $depth)
   $GLOBALS['comment'] = $comment; ?>
 
   <? if( isset($comment)) :?>
+   
   <? $newDate = date("d/m/Y", strtotime(get_comment_date()));?>
-  <div class="box mt-5" id="<?php comment_class(); ?> id=" comment-<?php comment_ID() ?>">
+  <div class="container mt-5" id="<?php comment_class(); ?> id=" comment-<?php comment_ID() ?>">
     <article class="media">
       <div class="media-left">
         <figure class="image is-64x64">
@@ -166,13 +167,12 @@ function mytheme_comment($comment, $args, $depth)
       </div>
       <div class="media-content">
         <div class="content">
-          <p>
-            <strong id='comment-name'>
-              <? echo get_comment_author() ?></strong> <small>
-              <? echo $newDate ?></small>
-            <br>
-            <?php comment_text() ?>
-          </p>
+            <p><strong id='comment-name'>
+              <? echo get_comment_author() ?></strong></p> 
+              <p class="comment-date"><small>
+              <?= get_comment_date() ?></small>
+              <div class="comment"></p>
+              <p><?= comment_text() ?></p>
         </div>
       </div>
     </article>
