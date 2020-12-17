@@ -16,9 +16,12 @@ yoast_breadcrumb('<p class="ml-5" id="breadcrumbs">', '</p>');
                     <? while (have_posts()) : the_post(); ?>
                     <section class="container is-8">
                         <div class="card mb-5 is-8">
+                        <? if(has_post_thumbnail()):?>
+                            <? $img = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'medium')?>
                             <figure class=" article-hero image is-3by1">
-                                <img class="is-fullwidth" src=" http://redlab.local/wp-content/uploads/2020/12/photo-1488229297570-58520851e868.jpg">
+                                <img class="is-fullwidth" src="<?= $img['0'] ?>"">
                             </figure>
+                            <? endif ?>
                             <div class="categories card-content p-4">
                                 <h1 class='title'>
                                     <? the_title()?>
