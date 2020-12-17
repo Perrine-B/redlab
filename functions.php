@@ -8,7 +8,7 @@ function add_theme_styles()
 {
   wp_enqueue_style('stylesheet', get_stylesheet_uri());
   wp_enqueue_style('bulma', "https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css");
-  wp_enqueue_style('Fira_font', "https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300&display=swap");
+  wp_enqueue_style('Fira_Sans_Light', "https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300&display=swap");
 }
 
 
