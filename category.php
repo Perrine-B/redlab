@@ -35,6 +35,9 @@ yoast_breadcrumb('<p class="ml-5" id="breadcrumbs">', '</p>');
                         <!-- end article's list zone -->
                         <? endwhile; ?>
                         <? endif; ?>
+                    
+                        <?php wpex_pagination(); ?>
+                    
                         <!-- end loop -->
             </div>
             <!-- sidebar zone -->
@@ -44,5 +47,6 @@ yoast_breadcrumb('<p class="ml-5" id="breadcrumbs">', '</p>');
             <!-- end sidebar zone -->
         </div>
     </div>
+ 
 </section>
 <?get_footer() ?>

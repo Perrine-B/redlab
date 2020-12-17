@@ -305,6 +305,23 @@ Et le blanc : #FFFFFF :smile:
   margin-right: 5em;
 }
 
+.page-numbers {
+  display: flex;
+flex-direction: row;
+justify-content: center;
+width: 85%;
+}
+
+.page-numbers {
+  color:  #E12C2B; 
+  padding: .5em
+}
+
+.page-numbers.current {
+  color:  #383B3F; 
+  padding-top: 6px;
+}
+
 @media only screen and (max-width: 768px) {
   .article-info > h2 > ul > li > a {
     font-size: .6em;
@@ -325,5 +342,9 @@ Et le blanc : #FFFFFF :smile:
     margin-top: 3em;
     margin-right: 0
   }
+  .page-numbers {
+  width: 100%;
+  }
 }
+
 
