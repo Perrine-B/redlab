@@ -3,10 +3,15 @@
 * description: Page template with sidebar
 */
 
+
+
 <? get_header(); ?>
 <!-- Hero header section -->
 <section id='hero' class="hero is-small is-primary is-bold" style="background-image: url(<?= header_image() ?>)">
     <div class="hero-body">
+        <div class="container">
+            <h1 id='site-title'> <?= get_slug() ?> </h1>
+        </div>
         <div class="container">
             <h1 id='site-title'> <?= get_slug() ?> </h1>
         </div>

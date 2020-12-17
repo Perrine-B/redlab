@@ -3,20 +3,16 @@ Theme Name: skyblog
 Author: Perrine B
 Description: Petits détails sur les fonctionnalités. Ce thème est conçu pour la création de blogs. La page pour recenser toutes les publications n'est pas présente par défaut mais vous pouvez facilement la créer en éditant une nouvelle page à partir du template de page blog prévu à cet effet. Cette page donnera également accès à la sidebar latérale principale. La home est divisée en trois sections. La première est un header personnalisable. La seconde reprendra le dernier post publié SAUF si l'un des posts publié est marqué comme sticky. Dans ce cas, c'est le sticky post le plus récent qui sera affiché. Enfin la troisième section se déclenchera une fois trois articles publiés pour afficher les derniers articles postés. Les sidebars présentes dans le footer ont été conçues pour ne recevoir qu'un seul widget. La searchbar et les commentaires et la 404 sont opérationnels. Bonne utilisation
 Version: 1.0
-
 /**
 * Basic settings
 */
 
-main {
-  margin-top: 5em;
-}
 
 body,
 h3,
 p,
 a {
-  font-family: "Roboto", sans-serif;
+  font-family: 'Fira Sans', sans-serif;
 }
 
 list-style {
@@ -26,7 +22,7 @@ list-style {
 h1,
 h2,
 h3 {
-  font-family: "Amatic SC", cursive;
+  font-family: 'Fira Sans', sans-serif;
 }
 
 h2 {
@@ -158,8 +154,42 @@ li > a:hover {
 * Comments
 */
 
-#comment-name > a {
-  color: black;
+#comment-name {
+  color: #E12C2B;
+  margin-bottom: 0;
+}
+
+.comment-date, .comment {
+  color : #383B3F; 
+}
+
+.name, .email {
+  width: 48%;
+  margin: auto
+}
+.comment {
+  width: 98%;
+  margin: auto
+}
+
+#commentform {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+#form-button {
+  display: 'none';
+}
+
+#submit {
+  background-color: #E12C2B;
+  border-radius: 12%;
+  color: white;
+}
+.content {
+  display: flex;
+  flex-direction: column;
 }
 
 /**
@@ -169,3 +199,117 @@ li > a:hover {
 button > a {
   color: grey;
 }
+
+/**
+* Breadcrumb
+*/
+/*
+Pour le rouge : #E12C2B
+Pour le presque noir : #383B3F
+Pour le blanc cassé tirant sur le bleu : #F5F6FB
+Et le blanc : #FFFFFF :smile:
+**/
+#breadcrumbs {
+  color: #E12C2B;
+  margin-bottom: 2em;
+  margin-top: 2em;
+}
+
+#breadcrumbs > span > span > a {
+  color: #E12C2B;
+  font-family: 'Fira Sans', sans-serif;
+  font-size: 1.1em;
+  text-decoration: underline;
+}
+
+#breadcrumbs > span > span > span > a {
+  color: #E12C2B;
+  font-family: 'Fira Sans', sans-serif;
+  font-size: 1.1em;
+  text-decoration: underline;
+}
+
+#breadcrumbs > span > span > span > strong {
+  color: #E12C2B;
+  font-family: 'Fira Sans', sans-serif;
+  font-size: 1.1em;
+}
+
+/*
+* Article
+**/
+
+.article{
+  margin: 2em 10em 2em 10em;
+}
+.solid {
+  width: 50%;
+  margin: auto;
+}
+
+.article-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.article-info > h2 > ul > li > a {
+  color : #E12C2B; 
+  font-size: .8em;
+  margin-right: 1em;
+  text-decoration: underline;
+}
+
+.article-info > h3 > a {
+  color : #E12C2B; 
+  font-size: 1em;
+  margin-right: 1em;
+  text-decoration: underline;
+}
+
+.article-info > h3 {
+  color : #383B3F; 
+  font-size: 1em;
+  margin-right: 1em
+}
+
+.pagination  {
+  display: flex;
+  justify-content: space-around;
+}
+
+.pagination > a {
+  color : #E12C2B; 
+  text-decoration: underline;
+}
+
+.category {
+  margin-top: 4em
+}
+
+.permalink{
+  color : #E12C2B; 
+  text-decoration: underline;
+  display: flex;
+  justify-content: end;
+  padding: 2em
+}
+
+@media only screen and (max-width: 768px) {
+  .article-info > h2 > ul > li > a {
+    font-size: .6em;
+  }
+  .article-info > h3 > a {
+    margin-top: 1em;
+    font-size: .9em;
+  }
+  
+  .article-info > h3 {
+    font-size: .9em;
+  }
+  .article {
+    margin : 2em;
+  }
+}
+
