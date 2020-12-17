@@ -3,16 +3,19 @@ Theme Name: skyblog
 Author: Perrine B
 Description: Petits détails sur les fonctionnalités. Ce thème est conçu pour la création de blogs. La page pour recenser toutes les publications n'est pas présente par défaut mais vous pouvez facilement la créer en éditant une nouvelle page à partir du template de page blog prévu à cet effet. Cette page donnera également accès à la sidebar latérale principale. La home est divisée en trois sections. La première est un header personnalisable. La seconde reprendra le dernier post publié SAUF si l'un des posts publié est marqué comme sticky. Dans ce cas, c'est le sticky post le plus récent qui sera affiché. Enfin la troisième section se déclenchera une fois trois articles publiés pour afficher les derniers articles postés. Les sidebars présentes dans le footer ont été conçues pour ne recevoir qu'un seul widget. La searchbar et les commentaires et la 404 sont opérationnels. Bonne utilisation
 Version: 1.0
-
 /**
 * Basic settings
 */
+
+main {
+    margin-top: 5em;
+}
 
 body,
 h3,
 p,
 a {
-    font-family: "Roboto", sans-serif;
+    font-family: 'Fira Sans', sans-serif;
 }
 
 list-style {
@@ -22,50 +25,19 @@ list-style {
 h1,
 h2,
 h3 {
-    font-family: "Amatic SC", cursive;
+    font-family: 'Fira Sans', sans-serif;
 }
 
 h2 {
-    color: #383B3F;
+    color: goldenrod;
 }
 
 .hero {
     margin-top: -23px;
 }
 
-
-/* Ajustement de la taille du logo d'en-tête car Bulma n'arrive pas à le prendre en charge du à la génération dans un lien de l'image */
-
-#logo {
-    padding-right: 60%;
-}
-
 .navbar {
-    box-shadow: 0px -10px 23px 1px #383B3F;
-}
-
-#navbar {
-    background-color: #E12C2B;
-    padding: 15px 10px;
-}
-
-@media (min-width: 1024px) {
-    #navbar {
-        padding: 15px 10%;
-    }
-    .width-logo {
-        width: 25%;
-    }
-    #logo {
-        padding-right: 20%;
-    }
-    #dropdown {
-        display: none;
-    }
-}
-
-a.burger>span {
-    color: #F5F6FB;
+    box-shadow: 0px -10px 23px 1px gray;
 }
 
 
@@ -75,13 +47,13 @@ a.burger>span {
 
 #site-title {
     font-size: 4em;
-    color: #383B3F;
+    color: black;
 }
 
 #site-subtitle {
     font-size: 2em;
     font-family: "Oswald, sans-serif";
-    color: #383B3F;
+    color: black;
     margin-left: 1em;
 }
 
@@ -94,7 +66,7 @@ a.burger>span {
 
 .section-title {
     font-size: 2.5em;
-    color: #383B3F;
+    color: darkgoldenrod;
     margin-bottom: 1em;
 }
 
@@ -119,19 +91,12 @@ a.burger>span {
 .menu-item {
     display: flex;
     flex-direction: row;
-    word-wrap: normal;
     justify-content: center;
-    text-decoration: underline;
-    padding: 0em 1.2em;
-    color: #F5F6FB;
-}
-
-.menu-item>a {
-    color: #F5F6FB;
+    padding: 0.5em;
 }
 
 .menu-item:hover>a {
-    color: #ffffff;
+    color: black;
     text-decoration: none;
 }
 
@@ -151,15 +116,15 @@ a.burger>span {
 }
 
 .menu-footer>li {
-    background-color: #383B3F;
+    background-color: black;
 }
 
 li>a {
-    color: #383B3F;
+    color: grey;
 }
 
 li>a:hover {
-    color: #383B3F;
+    color: black;
     text-decoration: none;
 }
 
@@ -175,7 +140,7 @@ li>a:hover {
 }
 
 .widgettitle {
-    color: #383B3F;
+    color: goldenrod;
     font-size: 2em;
     margin-bottom: 0.5em;
 }
@@ -197,8 +162,46 @@ li>a:hover {
 * Comments
 */
 
-#comment-name>a {
+#comment-name {
+    color: #E12C2B;
+    margin-bottom: 0;
+}
+
+.comment-date,
+.comment {
     color: #383B3F;
+}
+
+.name,
+.email {
+    width: 48%;
+    margin: auto
+}
+
+.comment {
+    width: 98%;
+    margin: auto
+}
+
+#commentform {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+#form-button {
+    display: 'none';
+}
+
+#submit {
+    background-color: #E12C2B;
+    border-radius: 12%;
+    color: white;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
 }
 
 
@@ -207,5 +210,137 @@ li>a:hover {
 */
 
 button>a {
+    color: grey;
+}
+
+
+/**
+* Breadcrumb
+*/
+
+
+/*
+Pour le rouge : #E12C2B
+Pour le presque noir : #383B3F
+Pour le blanc cassé tirant sur le bleu : #F5F6FB
+Et le blanc : #FFFFFF :smile:
+**/
+
+#breadcrumbs {
     color: #E12C2B;
+    margin-bottom: 2em;
+    margin-top: 2em;
+}
+
+#breadcrumbs>span>span>a {
+    color: #E12C2B;
+    font-family: 'Fira Sans', sans-serif;
+    font-size: 1.1em;
+    text-decoration: underline;
+}
+
+#breadcrumbs>span>span>span>a {
+    color: #E12C2B;
+    font-family: 'Fira Sans', sans-serif;
+    font-size: 1.1em;
+    text-decoration: underline;
+}
+
+#breadcrumbs>span>span>span>strong {
+    color: #E12C2B;
+    font-family: 'Fira Sans', sans-serif;
+    font-size: 1.1em;
+}
+
+
+/*
+* Article
+**/
+
+.article {
+    margin: 2em 10em 2em 10em;
+}
+
+.solid {
+    width: 50%;
+    margin: auto;
+}
+
+.article-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.article-info>h2>ul>li>a {
+    color: #E12C2B;
+    font-size: .8em;
+    margin-right: 1em;
+    text-decoration: underline;
+}
+
+.article-info>h3>a {
+    color: #E12C2B;
+    font-size: 1em;
+    margin-right: 1em;
+    text-decoration: underline;
+}
+
+.article-info>h3 {
+    color: #383B3F;
+    font-size: 1em;
+    margin-right: 1em
+}
+
+.pagination {
+    display: flex;
+    justify-content: space-around;
+}
+
+.pagination>a {
+    color: #E12C2B;
+    text-decoration: underline;
+}
+
+.category {
+    margin-top: 4em
+}
+
+.permalink {
+    color: #E12C2B;
+    text-decoration: underline;
+    display: flex;
+    justify-content: end;
+    padding: 2em
+}
+
+.categories.card-content.p-4 {
+    background-color: #F5F6FB
+}
+
+.card.mb-5.is-8 {
+    box-shadow: 115px -115px 0px -90px #E12C2B;
+    margin-right: 5em;
+}
+
+@media only screen and (max-width: 768px) {
+    .article-info>h2>ul>li>a {
+        font-size: .6em;
+    }
+    .article-info>h3>a {
+        margin-top: 1em;
+        font-size: .9em;
+    }
+    .article-info>h3 {
+        font-size: .9em;
+    }
+    .article {
+        margin: 2em;
+    }
+    .card.mb-5.is-8 {
+        box-shadow: 98px -98px 0px -78px #E12C2B;
+        margin-top: 3em;
+        margin-right: 0
+    }
 }
