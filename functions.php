@@ -94,34 +94,6 @@ register_sidebar(array(
 ));
 
 
-/** Header */
-
-$defaultHeader = get_template_directory_uri() . '/assets/img/header.png';
-
-register_default_headers(array(
-  'default' => array(
-    'url' => $defaultHeader,
-    'thumbnail_url' => $defaultHeader,
-    'description' => 'un header par défaut'
-
-  )
-));
-
-/** Requêtes */
-/* Requête pour faire apparaître tous les articles avec le statut 'publié'
- * @return {object}
- */
-function last_posts_query()
-{
-  $blog_posts = new WP_Query(
-    array(
-      'post_type' => 'post',
-      'post_status’' => 'publish',
-    )
-  );
-  return $blog_posts;
-}
-
 /** Utils */
 
 /* Retourne le nombre de posts détectés pour une page
@@ -211,3 +183,18 @@ if ( !function_exists( 'wpex_pagination' ) ) {
 	}
 	
 }
+
+// Cookies
+
+// function wpb_cookies_tutorial1() { 
+ 
+//   $visit_time = date('F j, Y  g:i a');
+   
+//   if(!isset($_COOKIE[$wpb_visit_time])) {
+   
+//   // set a cookie for 1 year
+//   setcookie('wpb_visit_time', $visit_time, time()+31556926);
+   
+//   }
+   
+//   }

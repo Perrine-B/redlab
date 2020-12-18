@@ -1,33 +1,34 @@
 <? get_header(); ?>
 <!-- Get all articles section-->
-<section class='m-4'>
-    <h1 id='site-title'> <?= get_bloginfo('name') ?> </h1>
+<section class='first ml-4 mr-4'>
+    <h1 id='site-title' class='title mt-5'> <?= get_bloginfo('name') ?> </h1>
     <?php
         if (function_exists('yoast_breadcrumb')) {
             yoast_breadcrumb('<p id="breadcrumbs">', '</p>');
         }
         ?>
-    <? $blog_posts = last_posts_query() ?>
     <div class="container mb-5">
         <div class="tile is-parent m-4 is-12">
             <div class="tile is-child is-9 columns is-flex-wrap-wrap">
                 <!-- loop -->
                 <?php if (have_posts()) : ?>
                         <?php while (have_posts()) : the_post(); ?>
-                            <div class="column p-5 mt-5 mb-5 is-one-quarter" id="presentation-articles">
-                            <?php the_post_thumbnail('post-thumbnail', ['class' => 'card-img-top', 'alt' =>'', 'style' => 'height: auto;']) ?>
-                                <img class="card-img-top">
-                                <a href="<?php the_permalink() ?>"><h2 class="card-title"><?php the_title() ?></h2></a>
-                                <p class="card-post-meta"><?php the_date(); ?> par <a href="#"><?php the_author() ?></a></p>
+                            <div class="column is-4" id="presentation-articles">
+                            <?php the_post_thumbnail() ?>
+                                <a href="<?php the_permalink() ?>"><h2 class="card-title title p-3 "><?php the_title() ?></h2></a>
+                                <p class='author pb-5'><?= get_the_date() ?> par <?php the_author_posts_link() ?></p>
                                 <?php the_excerpt(); ?>
                                 <a class="has-text-right link-article" href="<?php the_permalink() ?>">Lire l'article complet</a>
                             </div>
                         <?php endwhile; ?>
                 <?php endif; ?>
+                <?php wpex_pagination(); ?>
                 <!-- end loop -->
             </div>
             <!-- sidebar zone -->
-                <? get_sidebar() ?>
+            <div class="tile is-3">
+            <? get_sidebar() ?>
+        </div>
             <!-- end sidebar zone -->
         </div>
     </div>
