@@ -1,5 +1,5 @@
 </main>
-<footer class="footer">
+<footer class="company-footer">
   <div class='columns is-flex-wrap-wrap'>
     <div id='company-info' class="footer-widget column is-6 has-text-centered">
     <?php dynamic_sidebar('footer-logo'); ?>

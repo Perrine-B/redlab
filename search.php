@@ -1,24 +1,21 @@
 <? get_header(); ?>
-
-
 <? $count = post_counter(); ?>
-<section class="hero is-small is-bold">
-    <div class="hero-body">
-        <div class="container">
-            <h1 class='title'>Recherche</h1>
-            <? if (function_exists('yoast_breadcrumb')) {
-yoast_breadcrumb('<p class="ml-5" id="breadcrumbs">', '</p>');
-}?>
-            <? if ($count <= 1) : ?>
-            <p> Votre recherche a donné <?= $count ?> résultat </h1>
-                <? else : ?>
-                <p> Votre recherche a donné <?= $count ?> résultats </h1>
-                    <? endif;?>
-        </div>
-    </div>
-</section>
+
 <section class='m-4'>
     <div class="container mb-5">
+        <section class="first is-bold">
+            <div class="container">
+                <h1 class='title'>Recherche</h1>
+                <? if (function_exists('yoast_breadcrumb')) {
+                    yoast_breadcrumb('<p class="ml-5" id="breadcrumbs">', '</p>');
+                }?>
+                <? if ($count <= 1) : ?>
+                <p class=' p-5'> Votre recherche a donné <?= $count ?> résultat </h1>
+                    <? else : ?>
+                    <p class=' p-5'> Votre recherche a donné <?= $count ?> résultats </h1>
+                        <? endif;?>
+            </div>
+        </section>
         <div class="tile is-parent m-4 is-12">
             <div class="container">
                 <!-- loop -->
@@ -51,8 +48,9 @@ yoast_breadcrumb('<p class="ml-5" id="breadcrumbs">', '</p>');
                         <? endif; ?>
                         <!-- end loop -->
             </div>
+            <?php wpex_pagination(); ?>
             <!-- sidebar zone -->
-            <div class="tile is-3">
+            <div class=" tile is-3">
                 <? get_sidebar() ?>
             </div>
             <!-- end sidebar zone -->

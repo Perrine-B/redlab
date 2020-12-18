@@ -5,14 +5,20 @@
                     // on génère le formulaire avec du html personnalisé
                     comment_form([
                         'title_reply' => 
-                            "<h2 class=title> Laissez un commentaire</h2>",
-                        //'class_form' => 'p-4 message-content',
+                        "<h2 class=title> Laissez un commentaire</h2>",
+                        // //'class_form' => 'p-4 message-content',
                         'comment_notes_before' => 
-                            '<p class=mb-2 >Les commentaires sont validés par l\'administrateur du site. Un délai peut s\'écouler entre votre envoi et sa validation définitive. Tous les champs indiqués avec une astérique (*) sont obligatoires</p>',
-                            'comment_field' => '',
-                            
-                        // Autres champs ajoutables au formulaire
-                            'fields' => apply_filters('comment_form_default_fields', [
+                        '<p class=mb-2 >Les commentaires sont validés par l\'administrateur du site. Un délai peut s\'écouler entre votre envoi et sa validation définitive. Tous les champs indiqués avec une astérique (*) sont obligatoires</p>',
+                        'comment_field' =>   "<div class='field comment mt-5'>
+                        <label class='label'>Message (maximum 500 caractères) *</label>
+                        <div class='control'>
+                        <textarea id='comment' name='comment' class='textarea' placeholder='Votre commentaire'></textarea>
+                        </div>
+                        </div>",
+                        
+                        
+                        // // Autres champs ajoutables au formulaire
+                        'fields' => apply_filters('comment_form_default_fields', [
                                 'author' =>
                                     '<div class="field name">
                                         <label class="label">Nom *</label>
@@ -27,26 +33,15 @@
                                             <input name="email" class="input" type="email" placeholder="e.g. alexsmith@gmail.com">
                                         </div>
                                     </div>',
-                                // Fait apparaitre un champ qui permet de mémoriser les identifiants de l'utilisateur qui commente
-                                'cookies' => '',
-                                'comment_field' =>
-                                // Champ message
-                                    "<div class='field comment'>
-                                        <label class='label'>Message (maximum 500 caractères) *</label>
-                                    <div class='control'>
-                                        <textarea id='comment' name='comment' class='textarea' placeholder='Votre commentaire'></textarea>
-                                    </div>
-                                    </div>",
-                                      // Button de validation
-                        'submit_button' =>
-                        "<div  class='control'>
-                            <button id='submit' class='button'>Poster</button>
-                        </div>"
-                                    
+                        //         // Fait apparaitre un champ qui permet de mémoriser les identifiants de l'utilisateur qui commente
+                                //'cookies' => '<p class="comment-form-cookies-consent"><input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent" type="checkbox" value="yes"> <label for="wp-comment-cookies-consent">Enregistrer mon nom et mon e-mail dans le navigateur pour mon prochain commentaire.</label></p>', 
+                                'cookies' => ''
                             ]),
                         // Button de validation
                         'submit_button' =>
-                            ""
+                        "<div  class='control ml-3'>
+                            <button id='submit' class='button'>Poster</button>
+                        </div>"
                     ]);
                     ?>
      

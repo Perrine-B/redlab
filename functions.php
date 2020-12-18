@@ -94,34 +94,6 @@ register_sidebar(array(
 ));
 
 
-/** Header */
-
-$defaultHeader = get_template_directory_uri() . '/assets/img/header.png';
-
-register_default_headers(array(
-  'default' => array(
-    'url' => $defaultHeader,
-    'thumbnail_url' => $defaultHeader,
-    'description' => 'un header par défaut'
-
-  )
-));
-
-/** Requêtes */
-/* Requête pour faire apparaître tous les articles avec le statut 'publié'
- * @return {object}
- */
-function last_posts_query()
-{
-  $blog_posts = new WP_Query(
-    array(
-      'post_type' => 'post',
-      'post_status’' => 'publish',
-    )
-  );
-  return $blog_posts;
-}
-
 /** Utils */
 
 /* Retourne le nombre de posts détectés pour une page
@@ -178,3 +150,51 @@ function mytheme_comment($comment, $args, $depth)
 <?php
 }
 
+// Numbered Pagination
+if ( !function_exists( 'wpex_pagination' ) ) {
+	
+	function wpex_pagination() {
+		
+		$prev_arrow = is_rtl() ? '→' : '←';
+		$next_arrow = is_rtl() ? '←' : '→';
+		
+		global $wp_query;
+		$total = $wp_query->max_num_pages;
+		$big = 999999999; // need an unlikely integer
+		if( $total > 1 )  {
+			 if( !$current_page = get_query_var('paged') )
+				 $current_page = 1;
+			 if( get_option('permalink_structure') ) {
+				 $format = 'page/%#%/';
+			 } else {
+				 $format = '&paged=%#%';
+			 }
+			echo paginate_links(array(
+				'base'			=> str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+				'format'		=> $format,
+				'current'		=> max( 1, get_query_var('paged') ),
+				'total' 		=> $total,
+				'mid_size'		=> 3,
+				'type' 			=> 'list',
+				'prev_text'		=> '',
+				'next_text'		=> '',
+			 ) );
+		}
+	}
+	
+}
+
+// Cookies
+
+// function wpb_cookies_tutorial1() { 
+ 
+//   $visit_time = date('F j, Y  g:i a');
+   
+//   if(!isset($_COOKIE[$wpb_visit_time])) {
+   
+//   // set a cookie for 1 year
+//   setcookie('wpb_visit_time', $visit_time, time()+31556926);
+   
+//   }
+   
+//   }
