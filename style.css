@@ -453,23 +453,13 @@ width: 85%;
   
 }
 
-
 .sidebar-link li a:hover{
   color: #383b3f;
 }
   
-  
-  
-/**
+/*
 * Footer
 */
-
-/*
-Pour le presque noir : #383B3F
-Pour le blanc cassé tirant sur le bleu : #F5F6FB
-Et le blanc : #FFFFFF 
-
-**/
 
 .company-footer {
   color: white;
