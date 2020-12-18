@@ -1,4 +1,4 @@
-<aside class="col-md-4 blog-sidebar">
+<aside class="blog-sidebar">
     <div class="p-4 mb-3">
         <h4>Recherche</h4>
         <ul class="mb-0 ml-3 sidebar-link">

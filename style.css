@@ -1,11 +1,19 @@
 /*
-Theme Name: skyblog
+Theme Name: redlab
 Author: Perrine B
-Description: Petits détails sur les fonctionnalités. Ce thème est conçu pour la création de blogs. La page pour recenser toutes les publications n'est pas présente par défaut mais vous pouvez facilement la créer en éditant une nouvelle page à partir du template de page blog prévu à cet effet. Cette page donnera également accès à la sidebar latérale principale. La home est divisée en trois sections. La première est un header personnalisable. La seconde reprendra le dernier post publié SAUF si l'un des posts publié est marqué comme sticky. Dans ce cas, c'est le sticky post le plus récent qui sera affiché. Enfin la troisième section se déclenchera une fois trois articles publiés pour afficher les derniers articles postés. Les sidebars présentes dans le footer ont été conçues pour ne recevoir qu'un seul widget. La searchbar et les commentaires et la 404 sont opérationnels. Bonne utilisation
+Description: Thème personnalisé pour le projet Redlab
 Version: 1.0
 /**
 * Basic settings
 */
+
+/*
+Pour le rouge : #E12C2B
+Pour le presque noir : #383B3F
+Pour le blanc cassé tirant sur le bleu : #F5F6FB
+Et le blanc : #FFFFFF :smile:
+**/
+
 
 body,
 p,
@@ -104,7 +112,7 @@ a.burger>span {
 
 #presentation-articles{
   box-shadow: 115px -115px 0px -90px #E12C2B; 
-  margin-right: 5em;
+  margin: 2em;
   background-color: #f5f6fb;
 }
 
@@ -276,14 +284,6 @@ button>a {
 * Breadcrumb
 */
 
-
-/*
-Pour le rouge : #E12C2B
-Pour le presque noir : #383B3F
-Pour le blanc cassé tirant sur le bleu : #F5F6FB
-Et le blanc : #FFFFFF :smile:
-**/
-
 #breadcrumbs {
     color: #E12C2B;
     margin-bottom: 2em;
@@ -450,6 +450,7 @@ width: 85%;
   .page-numbers {
   width: 100%;
   }
+  
 }
 
 
@@ -549,15 +550,18 @@ Et le blanc : #FFFFFF
   }
 }
 
- @media only screen and (max-width: 768px) {
+ @media only screen and (max-width: 1000px) {
   #presentation-articles {
-    box-shadow: 98px -98px 0px -78px #E12C2B; 
-    margin-top: 3em;
-    margin-right: 0
+    box-shadow: 60px -60px 0px -40px #E12C2B; 
+    margin: 2em;
    }
   }
 
-
+  /* Margin de sécu pour les sections **/
   .first {
     margin-top: 7em;
+  }
+
+  .page {
+    min-height: 50vh;
   }

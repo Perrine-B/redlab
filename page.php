@@ -2,8 +2,8 @@
 <!-- The loop -->
 <? if (have_posts()) : ?>
 <? while (have_posts()) : the_post(); ?>
-<section class="section container mx-auto">
-    <div class="card is-8">
+<section class=" section container mx-auto">
+    <div class="page mt-5 card is-8">
         <h1 class="p-5 title has-text-centered"><?php the_title() ?></h1>
         <? the_post_thumbnail() ?>
         <div class='container m-5 p-5'>
