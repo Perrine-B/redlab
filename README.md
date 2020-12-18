@@ -1,2 +1,5 @@
 # redlab
-Projet de blog
+Presentation slide 
+
+https://slides.com/leoleclerc/deck-a45605
+
