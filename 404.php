@@ -1,5 +1,5 @@
 <? get_header(); ?>
-<section class='container mx-auto p-5 is-flex flex-direction-column is-justify-content-space-evenly is-align-items-center'>
+<section class='first container mx-auto p-5 is-flex flex-direction-column is-justify-content-space-evenly is-align-items-center'>
     <? $url =  get_template_directory_uri()?>
     <div class='is-flex is-flex-direction-column is-align-items-center'>
         <h1 class='title'>Oopsie, cette page n'a pu être trouvée</h1>

@@ -22,7 +22,7 @@ a {
 }
 
 list-style {
-    display: "none";
+    display: none;
 }
 
 h1,
@@ -110,7 +110,7 @@ a.burger>span {
   text-decoration: underline;
 }
 
-#presentation-articles{
+.presentation-articles{
   box-shadow: 115px -115px 0px -90px #E12C2B; 
   margin: 2em;
   background-color: #f5f6fb;
@@ -541,7 +541,7 @@ width: 85%;
 }
 
  @media only screen and (max-width: 1000px) {
-  #presentation-articles {
+  .presentation-articles {
     box-shadow: 60px -60px 0px -40px #E12C2B; 
     margin: 2em;
    }

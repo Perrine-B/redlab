@@ -13,9 +13,9 @@
                 <!-- loop -->
                 <?php if (have_posts()) : ?>
                         <?php while (have_posts()) : the_post(); ?>
-                            <div class="column is-4" id="presentation-articles">
+                            <div class="presentation-articles column is-4">
                             <?php the_post_thumbnail() ?>
-                                <a href="<?php the_permalink() ?>"><h2 class="card-title title p-3 "><?php the_title() ?></h2></a>
+                                <h2 class="card-title title p-3 "><?php the_title() ?></h2>
                                 <p class='author pb-5'><?= get_the_date() ?> par <?php the_author_posts_link() ?></p>
                                 <?php the_excerpt(); ?>
                                 <a class="has-text-right link-article" href="<?php the_permalink() ?>">Lire l'article complet</a>
