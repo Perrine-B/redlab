@@ -50,8 +50,8 @@
                         <? endwhile; ?>
                         <? endif; ?>
                         <!-- end loop -->
+                        <?php wpex_pagination(); ?>
             </div>
-            <?php wpex_pagination(); ?>
             <!-- sidebar zone -->
             <div class=" tile is-3">
                 <? get_sidebar() ?>
